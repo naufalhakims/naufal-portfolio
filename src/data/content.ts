@@ -151,6 +151,9 @@ export interface Project {
   tags: string[];
   image: string;
   link: string;
+  sourceCode?: string;
+  sourcePrivate?: boolean;
+  livePreview?: string;
   category: string;
   featured?: boolean;
 }
@@ -174,6 +177,7 @@ export const projects: Project[] = [
     tags: ["TODO", "TODO"],
     image: "/photos/project-2.svg",
     link: "#", // TODO: real link (live demo or repo)
+    livePreview: "https://weblium.com/create-dummy-website", // TODO: real link (live demo or repo)
     category: "web",
   },
   {
