@@ -1,8 +1,8 @@
 // All site content lives here. Edit text in one place without touching JSX.
 
 export const profile = {
-  name: "NAUFAL SYAFI HAKIM",
-  firstName: "NAUFAL",
+  name: "Naufal Hakim",
+  firstName: "Naufal",
   role: "Information Technology Student · Data Scientist Intern",
   location: "Surabaya, Indonesia",
   email: "naufalsyafi4@gmail.com",

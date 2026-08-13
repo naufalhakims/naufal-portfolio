@@ -44,7 +44,7 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
               {project.category}
             </p>
-            <h2 id="project-dialog-title" className="mt-2 font-display text-3xl uppercase leading-none sm:text-5xl">
+            <h2 id="project-dialog-title" className="mt-2 font-display font-bold text-3xl uppercase leading-none sm:text-5xl">
               {project.title}
             </h2>
           </div>
@@ -127,11 +127,11 @@ export default function Projects() {
   const visible = projects.filter((p) => filter === "all" || p.category === filter);
 
   return (
-    <section id="projects" data-theme="light" className="bg-white py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="projects" data-theme="light" className="bg-white py-16 lg:py-20">
+      <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <Reveal>
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-            <h2 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] uppercase leading-[0.9] tracking-tight text-black">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
+            <h2 className="font-display font-bold text-[clamp(2rem,5vw,3.75rem)] uppercase leading-[0.92] tracking-tight text-black">
               Projects
             </h2>
             <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter projects by type">
@@ -154,7 +154,7 @@ export default function Projects() {
           </div>
         </Reveal>
 
-        <motion.div layout className="grid gap-5 md:grid-cols-2">
+        <motion.div layout className="grid grid-cols-1 gap-3 md:grid-cols-3">
           <AnimatePresence mode="popLayout">
             {visible.map((project) => (
               <motion.article
@@ -166,8 +166,8 @@ export default function Projects() {
                 transition={{ duration: 0.35, ease: "easeOut" }}
                 className={
                   project.featured
-                    ? "group flex min-h-[280px] flex-col justify-between rounded-2xl bg-acid p-8 text-black transition-transform hover:-translate-y-1"
-                    : "group flex min-h-[280px] flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white text-black transition-transform hover:-translate-y-1 hover:border-black"
+                    ? "group flex min-h-[190px] flex-col justify-between rounded-2xl bg-acid p-4 text-black transition-transform hover:-translate-y-1"
+                    : "group flex min-h-[190px] flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white text-black transition-transform hover:-translate-y-1 hover:border-black"
                 }
                 data-cursor-view
                 role="button"
@@ -187,10 +187,10 @@ export default function Projects() {
                       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-black/60">
                         Featured
                       </p>
-                      <h3 className="mt-3 font-display text-3xl uppercase leading-tight tracking-tight">
+                      <h3 className="mt-2 font-display font-bold text-lg uppercase leading-tight tracking-tight sm:text-xl">
                         {project.title}
                       </h3>
-                      <p className="mt-4 text-sm leading-relaxed text-black/70">
+                      <p className="mt-2 text-xs leading-relaxed text-black/70">
                         {project.description}
                       </p>
                     </div>
@@ -220,7 +220,7 @@ export default function Projects() {
                   </>
                 ) : (
                   <>
-                    <div className="relative aspect-[16/10] w-full overflow-hidden">
+                    <div className="relative aspect-[16/9] w-full overflow-hidden">
                       {/* TODO: replace placeholder image with a real grayscale screenshot */}
                       <Image
                         src={project.image}
@@ -230,12 +230,12 @@ export default function Projects() {
                         sizes="(max-width: 1024px) 100vw, 40rem"
                       />
                     </div>
-                    <div className="flex flex-1 flex-col p-6">
-                      <h3 className="text-xl font-bold leading-snug">{project.title}</h3>
+                    <div className="flex flex-1 flex-col p-4">
+                      <h3 className="text-base font-bold leading-snug">{project.title}</h3>
                       <p className="mt-2 text-sm leading-relaxed text-neutral-600">
                         {project.description}
                       </p>
-                      <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
+                      <div className="mt-3 flex flex-wrap items-center justify-between gap-2.5">
                         <div className="flex flex-wrap gap-2">
                           {project.tags.map((tag, i) => (
                             <span

@@ -71,9 +71,9 @@ export default function Navbar() {
       >
         <a
           href="#home"
-          className="font-display text-lg uppercase tracking-[0.12em] transition-colors duration-250 hover:text-acid"
+          className="font-display font-medium text-lg uppercase tracking-[0.12em] transition-colors duration-250 hover:text-acid"
         >
-          Naufal's
+          Naufal&apos;s
         </a>
 
         <ul className="hidden items-center gap-7 md:flex lg:gap-9">
@@ -123,7 +123,7 @@ export default function Navbar() {
                   <a
                     href={item.href}
                     onClick={() => { setOpen(false); setActive(item.href.slice(1)); }}
-                    className="block py-3 font-display text-4xl uppercase tracking-tight text-white transition-colors hover:text-acid"
+                    className="block py-3 font-display font-bold text-4xl uppercase tracking-tight text-white transition-colors hover:text-acid"
                   >
                     {item.label}
                   </a>

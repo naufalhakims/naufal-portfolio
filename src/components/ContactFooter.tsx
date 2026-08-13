@@ -67,7 +67,7 @@ export default function ContactFooter() {
         {/* Giant wordmark + back-to-top */}
         <Reveal>
           <div className="flex items-end justify-between gap-6">
-            <h2 className="font-display text-[clamp(3rem,13vw,10rem)] uppercase leading-[0.85] tracking-tight">
+            <h2 className="font-display font-bold text-[clamp(3rem,13vw,10rem)] uppercase leading-[0.85] tracking-tight">
               {footerContact.wordmark}
             </h2>
             <a

@@ -19,11 +19,11 @@ export default function ExperienceGrid() {
     });
 
   return (
-    <section id="experience" data-theme="light" className="bg-neutral-50 py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8">
+    <section id="experience" data-theme="light" className="bg-neutral-50 py-16 lg:py-20">
+      <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <Reveal>
-          <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
-            <h2 className="font-display text-[clamp(2.25rem,6vw,4.5rem)] uppercase leading-[0.9] tracking-tight text-black">
+          <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
+            <h2 className="font-display font-bold text-[clamp(2rem,5vw,3.75rem)] uppercase leading-[0.92] tracking-tight text-black">
               Experience
             </h2>
             <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter experience by type">
@@ -58,8 +58,8 @@ export default function ExperienceGrid() {
                 transition={{ duration: 0.35, ease: "easeOut" }}
                 className={
                   exp.featured
-                    ? "group flex min-h-[260px] flex-col justify-between rounded-2xl bg-acid p-5 text-black transition-transform hover:-translate-y-1 lg:min-h-[300px]"
-                    : "group flex min-h-[260px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-5 text-black transition-transform hover:-translate-y-1 hover:border-black lg:min-h-[300px]"
+                    ? "group flex min-h-[220px] flex-col justify-between rounded-2xl bg-acid p-6 text-black transition-transform hover:-translate-y-1 lg:min-h-[240px]"
+                    : "group flex min-h-[220px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6 text-black transition-transform hover:-translate-y-1 hover:border-black lg:min-h-[240px]"
                 }
                 data-cursor-view
               >
@@ -69,11 +69,11 @@ export default function ExperienceGrid() {
                       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-black/60">
                         {exp.period}
                       </p>
-                      <h3 className="mt-3 font-display text-2xl uppercase leading-tight tracking-tight">
+                      <h3 className="mt-2 font-display font-bold text-xl uppercase leading-tight tracking-tight sm:text-2xl">
                         {exp.role}
                       </h3>
                       <p className="mt-2 text-sm font-semibold text-black/80">{exp.org}</p>
-                      <p className="mt-4 text-xs leading-relaxed text-black/70">
+                      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/70">
                         {exp.points[0]}
                       </p>
                     </div>
@@ -85,9 +85,9 @@ export default function ExperienceGrid() {
                       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
                         {exp.period}
                       </p>
-                      <h3 className="mt-3 text-base font-bold leading-snug">{exp.role}</h3>
+                      <h3 className="mt-2 text-lg font-bold leading-snug">{exp.role}</h3>
                       <p className="mt-1 text-sm font-semibold text-neutral-500">{exp.org}</p>
-                      <ul className="mt-4 space-y-2">
+                      <ul className="mt-3 space-y-1.5">
                         {exp.points.map((point) => (
                           <li key={point} className="flex gap-2 text-xs leading-relaxed text-neutral-600">
                             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-acid" />
@@ -96,7 +96,7 @@ export default function ExperienceGrid() {
                         ))}
                       </ul>
                     </div>
-                    <div className="mt-6 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-500">
+                    <div className="mt-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-500">
                       <ArrowUpRight className="size-4" />
                       {exp.location}
                     </div>

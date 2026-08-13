@@ -1,20 +1,6 @@
 import type { Metadata } from "next";
-import { Fjalla_One, Inter } from "next/font/google";
 import "./globals.css";
 import { profile } from "@/src/data/content";
-
-const fjalla = Fjalla_One({
-  weight: "400",
-  subsets: ["latin"],
-  variable: "--font-fjalla-one",
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   title: `${profile.name} — Data Scientist Intern`,
@@ -34,7 +20,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${fjalla.variable} ${inter.variable} antialiased`}>
+    <html lang="en" className="antialiased">
+      <head>
+        <link
+          href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,701,501&display=swap"
+          rel="stylesheet"
+        />
+      </head>
       <body className="min-h-screen bg-white font-sans text-neutral-900">
         {children}
       </body>

@@ -19,7 +19,7 @@ const item = {
 export default function Hero() {
   return (
     <section id="home" data-theme="dark" className="relative overflow-hidden bg-black">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-10 pt-28 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pb-16 lg:pt-36">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-10 pt-[4.5rem] sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pb-16 lg:pt-[6.5rem]">
         {/* Left: copy */}
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.p
@@ -31,7 +31,7 @@ export default function Hero() {
 
           <motion.h1
             variants={item}
-            className="font-display text-[clamp(2.5rem,8vw,6rem)] uppercase leading-[0.9] tracking-tight text-white"
+            className="font-display font-bold text-[clamp(2.5rem,8vw,6rem)] leading-[0.9] tracking-tight text-white"
           >
             {profile.name}
           </motion.h1>
