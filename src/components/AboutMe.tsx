@@ -5,7 +5,7 @@ import { profile, aboutMePhoto } from "@/src/data/content";
 
 export default function AboutMe() {
   return (
-    <section id="about-me" className="bg-neutral-50 py-20 lg:py-28">
+    <section id="about-me" data-theme="light" className="bg-neutral-50 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <div className="mb-12 flex flex-wrap items-center justify-between gap-6">

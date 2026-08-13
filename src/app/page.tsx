@@ -6,20 +6,24 @@ import Projects from "@/src/components/Projects";
 import Certifications from "@/src/components/Certifications";
 import AboutMe from "@/src/components/AboutMe";
 import ContactFooter from "@/src/components/ContactFooter";
+import CustomCursor from "@/src/components/CustomCursor";
 
 export default function Home() {
   return (
     <>
       <Navbar />
-      <main>
-        <Hero />
-        <Expertise />
-        <ExperienceGrid />
-        <Projects />
-        <Certifications />
-        <AboutMe />
-      </main>
-      <ContactFooter />
+      <CustomCursor />
+      <div>
+        <main>
+          <Hero />
+          <Expertise />
+          <ExperienceGrid />
+          <Projects />
+          <Certifications />
+          <AboutMe />
+        </main>
+        <ContactFooter />
+      </div>
     </>
   );
 }

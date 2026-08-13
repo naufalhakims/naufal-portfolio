@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { ArrowRight, ArrowDown, Download } from "lucide-react";
+import { ArrowRight, Download } from "lucide-react";
 import Marquee from "@/src/components/Marquee";
 import { heroSkills, profile, cvUrl, heroPhoto } from "@/src/data/content";
 
@@ -18,8 +18,8 @@ const item = {
 
 export default function Hero() {
   return (
-    <section id="home" className="relative overflow-hidden bg-black">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-16 pt-28 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pb-24 lg:pt-36">
+    <section id="home" data-theme="dark" className="relative overflow-hidden bg-black">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 pb-10 pt-28 sm:px-8 lg:grid-cols-[1.15fr_0.85fr] lg:items-center lg:pb-16 lg:pt-36">
         {/* Left: copy */}
         <motion.div variants={container} initial="hidden" animate="show">
           <motion.p
@@ -106,19 +106,8 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      <div className="pb-10 lg:pb-14">
-        <Marquee />
-      </div>
-
-      <div className="flex justify-center pb-8">
-        <a
-          href="#about"
-          aria-label="Scroll to About"
-          className="rounded-full border border-white/25 p-3 text-white transition-colors hover:border-acid hover:text-acid"
-        >
-          <ArrowDown className="size-5" />
-        </a>
-      </div>
+      {/* Lime transition strip into the light expertise section */}
+      <Marquee />
     </section>
   );
 }

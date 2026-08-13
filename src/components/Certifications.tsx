@@ -4,7 +4,7 @@ import { certifications } from "@/src/data/content";
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="bg-white py-20 lg:py-28">
+    <section id="certifications" data-theme="light" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <div className="mb-12 flex flex-wrap items-center justify-between gap-6">

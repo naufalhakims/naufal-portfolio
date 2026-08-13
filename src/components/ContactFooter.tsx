@@ -4,7 +4,7 @@ import { footerNav, footerContact, profile } from "@/src/data/content";
 
 export default function ContactFooter() {
   return (
-    <footer id="contact" className="bg-black text-white">
+    <footer id="contact" data-theme="dark" className="bg-black text-white">
       <div className="mx-auto max-w-7xl px-5 pt-20 sm:px-8 lg:pt-28">
         {/* Nav columns */}
         <Reveal>

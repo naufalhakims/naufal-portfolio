@@ -6,17 +6,20 @@ import { ArrowUpRight } from "lucide-react";
 import Reveal from "@/src/components/Reveal";
 import { experience, experienceFilters } from "@/src/data/content";
 
-type FilterKey = "all" | "data" | "teaching" | "organization";
+type FilterKey = "all" | "work" | "organization";
 
 export default function ExperienceGrid() {
   const [filter, setFilter] = useState<FilterKey>("all");
 
-  const visible = experience.filter(
-    (e) => filter === "all" || e.type === filter
-  );
+  const visible = experience
+    .filter((e) => filter === "all" || e.type === filter)
+    .sort((a, b) => {
+      if (filter !== "all") return 0;
+      return a.type === b.type ? 0 : a.type === "work" ? -1 : 1;
+    });
 
   return (
-    <section id="experience" className="bg-neutral-50 py-20 lg:py-28">
+    <section id="experience" data-theme="light" className="bg-neutral-50 py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
@@ -43,7 +46,7 @@ export default function ExperienceGrid() {
           </div>
         </Reveal>
 
-        <motion.div layout className="grid gap-5 md:grid-cols-2">
+        <motion.div layout className="grid grid-cols-1 gap-3">
           <AnimatePresence mode="popLayout">
             {visible.map((exp) => (
               <motion.article
@@ -55,9 +58,10 @@ export default function ExperienceGrid() {
                 transition={{ duration: 0.35, ease: "easeOut" }}
                 className={
                   exp.featured
-                    ? "group flex min-h-[280px] flex-col justify-between rounded-2xl bg-acid p-8 text-black transition-transform hover:-translate-y-1"
-                    : "group flex min-h-[280px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-8 text-black transition-transform hover:-translate-y-1 hover:border-black"
+                    ? "group flex min-h-[260px] flex-col justify-between rounded-2xl bg-acid p-5 text-black transition-transform hover:-translate-y-1 lg:min-h-[300px]"
+                    : "group flex min-h-[260px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-5 text-black transition-transform hover:-translate-y-1 hover:border-black lg:min-h-[300px]"
                 }
+                data-cursor-view
               >
                 {exp.featured ? (
                   <>
@@ -65,11 +69,11 @@ export default function ExperienceGrid() {
                       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-black/60">
                         {exp.period}
                       </p>
-                      <h3 className="mt-3 font-display text-3xl uppercase leading-tight tracking-tight">
+                      <h3 className="mt-3 font-display text-2xl uppercase leading-tight tracking-tight">
                         {exp.role}
                       </h3>
                       <p className="mt-2 text-sm font-semibold text-black/80">{exp.org}</p>
-                      <p className="mt-4 text-sm leading-relaxed text-black/70">
+                      <p className="mt-4 text-xs leading-relaxed text-black/70">
                         {exp.points[0]}
                       </p>
                     </div>
@@ -81,11 +85,11 @@ export default function ExperienceGrid() {
                       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
                         {exp.period}
                       </p>
-                      <h3 className="mt-3 text-xl font-bold leading-snug">{exp.role}</h3>
+                      <h3 className="mt-3 text-base font-bold leading-snug">{exp.role}</h3>
                       <p className="mt-1 text-sm font-semibold text-neutral-500">{exp.org}</p>
                       <ul className="mt-4 space-y-2">
                         {exp.points.map((point) => (
-                          <li key={point} className="flex gap-2 text-sm leading-relaxed text-neutral-600">
+                          <li key={point} className="flex gap-2 text-xs leading-relaxed text-neutral-600">
                             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-acid" />
                             {point}
                           </li>

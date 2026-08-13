@@ -62,7 +62,7 @@ export const expertise = {
   ],
 };
 
-export type ExperienceType = "data" | "teaching" | "organization";
+export type ExperienceType = "work" | "organization";
 
 export interface Experience {
   role: string;
@@ -76,8 +76,7 @@ export interface Experience {
 
 export const experienceFilters: { key: ExperienceType | "all"; label: string }[] = [
   { key: "all", label: "All" },
-  { key: "data", label: "Data" },
-  { key: "teaching", label: "Teaching" },
+  { key: "work", label: "Work" },
   { key: "organization", label: "Organization" },
 ];
 
@@ -87,7 +86,7 @@ export const experience: Experience[] = [
     org: "Social Economic Accelerator Lab",
     location: "Surabaya",
     period: "Feb 2026 – Present",
-    type: "data",
+    type: "work",
     featured: true,
     points: [
       "Built an automated data ingestion pipeline (Python + Selenium), extracting 6,000+ records from dynamic web sources.",
@@ -100,7 +99,7 @@ export const experience: Experience[] = [
     org: "Institut Teknologi Sepuluh Nopember",
     location: "Surabaya",
     period: "Feb – Jun 2025",
-    type: "teaching",
+    type: "work",
     points: [
       "Taught SQL fundamentals and MongoDB basics; 90% positive feedback, 95% of class scored above passing grade.",
     ],
@@ -110,7 +109,7 @@ export const experience: Experience[] = [
     org: "Institut Teknologi Sepuluh Nopember",
     location: "Surabaya",
     period: "Sep – Dec 2025",
-    type: "teaching",
+    type: "work",
     points: [
       "Managed grading records in Excel, resolved 100% of grading miscommunications.",
       "Covered 100% of lectures when the primary lecturer was unavailable.",

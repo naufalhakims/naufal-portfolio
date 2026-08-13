@@ -13,7 +13,7 @@ export default function Projects() {
   const visible = projects.filter((p) => filter === "all" || p.category === filter);
 
   return (
-    <section id="projects" className="bg-white py-20 lg:py-28">
+    <section id="projects" data-theme="light" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
@@ -55,6 +55,7 @@ export default function Projects() {
                     ? "group flex min-h-[280px] flex-col justify-between rounded-2xl bg-acid p-8 text-black transition-transform hover:-translate-y-1"
                     : "group flex min-h-[280px] flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white text-black transition-transform hover:-translate-y-1 hover:border-black"
                 }
+                data-cursor-view
               >
                 {project.featured ? (
                   <>

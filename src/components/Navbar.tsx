@@ -6,14 +6,49 @@ import { Menu, X } from "lucide-react";
 import { nav, profile } from "@/src/data/content";
 
 export default function Navbar() {
-  const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [active, setActive] = useState("home");
+  const [theme, setTheme] = useState<"dark" | "light">("dark");
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
-    onScroll();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
+    const sections = Array.from(document.querySelectorAll<HTMLElement>("section[data-theme], footer[data-theme]"));
+
+    const updateThemeFromViewport = () => {
+      const underneath = document
+        .elementsFromPoint(window.innerWidth / 2, 40)
+        .map((element) => element.closest<HTMLElement>("[data-theme]"))
+        .find((section): section is HTMLElement => Boolean(section));
+
+      if (underneath) {
+        setTheme(underneath.dataset.theme === "light" ? "light" : "dark");
+      }
+    };
+
+    const sectionObserver = new IntersectionObserver(
+      () => updateThemeFromViewport(),
+      { rootMargin: "-76px 0px -70% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
+    );
+
+    const activeObserver = new IntersectionObserver(
+      (entries) => entries.forEach((entry) => entry.isIntersecting && setActive(entry.target.id)),
+      { rootMargin: "-35% 0px -55%", threshold: 0 },
+    );
+
+    sections.forEach((section) => sectionObserver.observe(section));
+    updateThemeFromViewport();
+    window.addEventListener("scroll", updateThemeFromViewport, { passive: true });
+    window.addEventListener("resize", updateThemeFromViewport, { passive: true });
+    nav.forEach((item) => {
+      const section = document.querySelector(item.href);
+      if (section) activeObserver.observe(section);
+    });
+
+    return () => {
+      sectionObserver.disconnect();
+      activeObserver.disconnect();
+      window.removeEventListener("scroll", updateThemeFromViewport);
+      window.removeEventListener("resize", updateThemeFromViewport);
+    };
   }, []);
 
   // Lock body scroll while mobile menu is open
@@ -26,27 +61,30 @@ export default function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-black/90 backdrop-blur-md" : "bg-transparent"
+      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-250 ${
+        theme === "dark" ? "text-white" : "text-black"
       }`}
     >
       <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 sm:px-8"
+        className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12"
         aria-label="Primary"
       >
         <a
           href="#home"
-          className="text-sm font-bold uppercase tracking-[0.25em] text-white"
+          className="font-display text-lg uppercase tracking-[0.12em] transition-colors duration-250 hover:text-acid"
         >
-          {profile.firstName}
+          Naufal's
         </a>
 
-        <ul className="hidden items-center gap-7 lg:flex">
+        <ul className="hidden items-center gap-7 md:flex lg:gap-9">
           {nav.map((item) => (
             <li key={item.label}>
               <a
                 href={item.href}
-                className="text-[11px] font-semibold uppercase tracking-[0.2em] text-white/70 transition-colors hover:text-acid"
+                onClick={() => setActive(item.href.slice(1))}
+                className={`nav-link relative block text-[12px] font-medium uppercase tracking-[0.12em] transition-colors duration-250 hover:text-acid ${
+                  active === item.href.slice(1) ? "nav-link--active" : ""
+                }`}
               >
                 {item.label}
               </a>
@@ -54,23 +92,15 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center gap-3">
-          <a
-            href={`mailto:${profile.email}`}
-            className="hidden rounded-full bg-acid px-5 py-2 text-[11px] font-bold uppercase tracking-[0.15em] text-black transition-transform hover:scale-105 lg:inline-block"
-          >
-            Let&apos;s Connect
-          </a>
-          <button
+        <button
             type="button"
             onClick={() => setOpen((v) => !v)}
-            className="rounded-md p-2 text-white lg:hidden"
+            className="rounded-md p-2 transition-colors duration-250 hover:text-acid md:hidden"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+        </button>
       </nav>
 
       <AnimatePresence>
@@ -80,7 +110,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 top-0 z-40 flex flex-col bg-black px-8 pt-24 lg:hidden"
+            className="fixed inset-0 top-0 z-40 flex flex-col bg-black px-8 pt-28 md:hidden"
           >
             <ul className="flex flex-col gap-2">
               {nav.map((item, i) => (
@@ -92,7 +122,7 @@ export default function Navbar() {
                 >
                   <a
                     href={item.href}
-                    onClick={() => setOpen(false)}
+                    onClick={() => { setOpen(false); setActive(item.href.slice(1)); }}
                     className="block py-3 font-display text-4xl uppercase tracking-tight text-white transition-colors hover:text-acid"
                   >
                     {item.label}

@@ -3,7 +3,7 @@ import { expertise, education } from "@/src/data/content";
 
 export default function Expertise() {
   return (
-    <section id="about" className="bg-white py-20 lg:py-28">
+    <section id="about" data-theme="light" className="bg-white py-20 lg:py-28">
       <div className="mx-auto max-w-7xl px-5 sm:px-8">
         <Reveal>
           <div className="mb-10 flex flex-wrap items-end justify-between gap-6">
