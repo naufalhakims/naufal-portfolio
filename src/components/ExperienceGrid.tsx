@@ -11,12 +11,7 @@ type FilterKey = "all" | "work" | "organization";
 export default function ExperienceGrid() {
   const [filter, setFilter] = useState<FilterKey>("all");
 
-  const visible = experience
-    .filter((e) => filter === "all" || e.type === filter)
-    .sort((a, b) => {
-      if (filter !== "all") return 0;
-      return a.type === b.type ? 0 : a.type === "work" ? -1 : 1;
-    });
+  const visible = experience.filter((e) => filter === "all" || e.type === filter);
 
   return (
     <section id="experience" data-theme="light" className="bg-neutral-50 py-16 lg:py-20">
@@ -48,22 +43,25 @@ export default function ExperienceGrid() {
 
         <motion.div layout className="grid grid-cols-1 gap-3">
           <AnimatePresence mode="popLayout">
-            {visible.map((exp) => (
-              <motion.article
-                layout
-                key={exp.role}
-                initial={{ opacity: 0, y: 24 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.96 }}
-                transition={{ duration: 0.35, ease: "easeOut" }}
-                className={
-                  exp.featured
-                    ? "group flex min-h-[220px] flex-col justify-between rounded-2xl bg-acid p-6 text-black transition-transform hover:-translate-y-1 lg:min-h-[240px]"
-                    : "group flex min-h-[220px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6 text-black transition-transform hover:-translate-y-1 hover:border-black lg:min-h-[240px]"
-                }
-                data-cursor-view
-              >
-                {exp.featured ? (
+            {visible.map((exp) => {
+              const isFeatured = exp.featured && exp.type === "work";
+
+              return (
+                <motion.article
+                  layout
+                  key={exp.role}
+                  initial={{ opacity: 0, y: 24 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.96 }}
+                  transition={{ duration: 0.35, ease: "easeOut" }}
+                  className={
+                    isFeatured
+                      ? "group flex min-h-[220px] flex-col justify-between rounded-2xl bg-acid p-6 text-black transition-transform hover:-translate-y-1 lg:min-h-[240px]"
+                      : "group flex min-h-[220px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6 text-black transition-transform hover:-translate-y-1 hover:border-black lg:min-h-[240px]"
+                  }
+                  data-cursor-view
+                >
+                {isFeatured ? (
                   <>
                     <div>
                       <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-black/60">
@@ -73,9 +71,23 @@ export default function ExperienceGrid() {
                         {exp.role}
                       </h3>
                       <p className="mt-2 text-sm font-semibold text-black/80">{exp.org}</p>
-                      <p className="mt-3 max-w-3xl text-sm leading-relaxed text-black/70">
-                        {exp.points[0]}
-                      </p>
+                      <ul className="mt-3 max-w-3xl space-y-1.5">
+                        {exp.points.map((point, index) => (
+                          <li key={`${point}-${index}`} className="flex gap-2 text-sm leading-relaxed text-black/70">
+                            <span className="mt-2 size-1.5 shrink-0 rounded-full bg-black/50" />
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                      {exp.techStack && (
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {exp.techStack.map((tech) => (
+                            <span key={tech} className="rounded-full bg-black/10 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em]">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     <ArrowUpRight className="mt-6 size-7 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
                   </>
@@ -95,6 +107,15 @@ export default function ExperienceGrid() {
                           </li>
                         ))}
                       </ul>
+                      {exp.techStack && (
+                        <div className="mt-4 flex flex-wrap gap-2">
+                          {exp.techStack.map((tech) => (
+                            <span key={tech} className="rounded-full border border-neutral-200 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-neutral-500">
+                              {tech}
+                            </span>
+                          ))}
+                        </div>
+                      )}
                     </div>
                     <div className="mt-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-500">
                       <ArrowUpRight className="size-4" />
@@ -102,8 +123,9 @@ export default function ExperienceGrid() {
                     </div>
                   </>
                 )}
-              </motion.article>
-            ))}
+                </motion.article>
+              );
+            })}
           </AnimatePresence>
         </motion.div>
       </div>

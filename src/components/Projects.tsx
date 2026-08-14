@@ -63,9 +63,9 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
             <p className="text-sm leading-relaxed text-neutral-600">{project.description}</p>
             <div className="mt-7">
               <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">Tech stack</p>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-3 flex flex-wrap gap-1.5">
                 {project.tags.map((tag, index) => (
-                  <span key={`${tag}-${index}`} className="rounded-full bg-acid px-3 py-1.5 text-[11px] font-bold uppercase tracking-[0.1em]">
+                  <span key={`${tag}-${index}`} className="rounded-full bg-acid px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em]">
                     {tag}
                   </span>
                 ))}
@@ -79,7 +79,7 @@ function ProjectDetail({ project, onClose }: { project: Project; onClose: () => 
                 </span>
               ) : sourceUrl ? (
                 <a href={sourceUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 rounded-full bg-black px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-white transition-colors hover:bg-acid hover:text-black">
-                  Link to source code <ExternalLink className="size-3.5" />
+                  Open project link <ExternalLink className="size-3.5" />
                 </a>
               ) : (
                 <span className="text-xs text-neutral-500">Source link not added yet.</span>
@@ -166,7 +166,7 @@ export default function Projects() {
                 transition={{ duration: 0.35, ease: "easeOut" }}
                 className={
                   project.featured
-                    ? "group flex min-h-[190px] flex-col justify-between rounded-2xl bg-acid p-4 text-black transition-transform hover:-translate-y-1"
+                    ? "group flex min-h-[190px] flex-col overflow-hidden rounded-2xl bg-acid text-black transition-transform hover:-translate-y-1"
                     : "group flex min-h-[190px] flex-col overflow-hidden rounded-2xl border border-neutral-200 bg-white text-black transition-transform hover:-translate-y-1 hover:border-black"
                 }
                 data-cursor-view
@@ -183,45 +183,55 @@ export default function Projects() {
               >
                 {project.featured ? (
                   <>
-                    <div>
-                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-black/60">
-                        Featured
-                      </p>
-                      <h3 className="mt-2 font-display font-bold text-lg uppercase leading-tight tracking-tight sm:text-xl">
-                        {project.title}
-                      </h3>
-                      <p className="mt-2 text-xs leading-relaxed text-black/70">
-                        {project.description}
-                      </p>
+                    <div className="relative aspect-[16/9] w-full overflow-hidden bg-black/10">
+                      <Image
+                        src={project.image}
+                        alt={`${project.title} project`}
+                        fill
+                        className="object-cover grayscale transition-transform duration-500 group-hover:scale-105"
+                        sizes="(max-width: 1024px) 100vw, 40rem"
+                      />
                     </div>
-                    <div className="mt-6 flex items-center justify-between">
-                      <div className="flex flex-wrap gap-2">
-                        {project.tags.map((tag, i) => (
-                          <span
-                            key={`${tag}-${i}`}
-                            className="rounded-full bg-black/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em]"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                    <div className="flex flex-1 flex-col justify-between p-4">
+                      <div>
+                        <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-black/60">
+                          Featured
+                        </p>
+                        <h3 className="mt-2 font-display font-bold text-lg uppercase leading-tight tracking-tight sm:text-xl">
+                          {project.title}
+                        </h3>
+                        <p className="mt-2 text-xs leading-relaxed text-black/70">
+                          {project.description}
+                        </p>
                       </div>
-                      <button
-                        type="button"
-                        onClick={(event) => {
-                          event.stopPropagation();
-                          setSelectedProject(project);
-                        }}
-                        className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-[0.15em] underline-offset-4 hover:underline"
-                      >
-                        View Project
-                        <ArrowUpRight className="size-4" />
-                      </button>
+                      <div className="mt-6 flex items-center justify-between gap-3">
+                        <div className="flex flex-wrap gap-1.5">
+                          {project.tags.map((tag, i) => (
+                            <span
+                              key={`${tag}-${i}`}
+                              className="rounded-full bg-black/10 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em]"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                        <button
+                          type="button"
+                          onClick={(event) => {
+                            event.stopPropagation();
+                            setSelectedProject(project);
+                          }}
+                          className="inline-flex shrink-0 items-center gap-1.5 text-xs font-bold uppercase tracking-[0.15em] underline-offset-4 hover:underline"
+                        >
+                          View Project
+                          <ArrowUpRight className="size-4" />
+                        </button>
+                      </div>
                     </div>
                   </>
                 ) : (
                   <>
                     <div className="relative aspect-[16/9] w-full overflow-hidden">
-                      {/* TODO: replace placeholder image with a real grayscale screenshot */}
                       <Image
                         src={project.image}
                         alt={`${project.title} project`}
@@ -236,11 +246,11 @@ export default function Projects() {
                         {project.description}
                       </p>
                       <div className="mt-3 flex flex-wrap items-center justify-between gap-2.5">
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5">
                           {project.tags.map((tag, i) => (
                             <span
                               key={`${tag}-${i}`}
-                              className="rounded-full border border-neutral-200 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.12em] text-neutral-600"
+                              className="rounded-full border border-neutral-200 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-[0.08em] text-neutral-600"
                             >
                               {tag}
                             </span>
