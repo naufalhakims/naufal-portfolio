@@ -45,11 +45,11 @@ export const expertise = {
   headline: "TECHNICAL EXPERTISE",
   filters: [],
   stats: [
-    { value: "2", label: "Internship experiences — Fullstack & Data Scientist" },
+    { value: "4", label: "Work experiences — Internships & Assistant Lecturer" },
     { value: "2", label: "Organizational roles at HMIT ITS" },
     { value: "13", label: "Projects completed — web, data & design" },
     { value: "3.81/4.00", label: "Current GPA at ITS", featured: true },
-    { value: "2", label: "Assistant lecturer experiences — Database & Ethics" },
+    { value: "38", label: "Technologies mastered — experiences & projects" },
     { value: "1x", label: "Finalist of data competition" },
   ],
 };
@@ -303,19 +303,12 @@ export const aboutMePhoto = {
   caption: "Naufal - IT Student & Data Scientist Intern, Surabaya",
 };
 
-export const footerNav = [
-  { label: "Home", href: "#home" },
-  { label: "About", href: "#about" },
-  { label: "Experience", href: "#experience" },
-  { label: "Projects", href: "#projects" },
-  { label: "Contact", href: "#contact" },
-];
-
 export const footerContact = {
-  wordmark: "LET'S TALK",
-  phone: "+6288806898411",
+  wordmark: "LET'S talk",
   email: "naufalsyafi4@gmail.com",
   linkedin: "linkedin.com/in/naufal-syafi-hakim",
+  instagram: "https://www.instagram.com/nplhkm._/",
+  github: "https://github.com/naufalhakims",
   location: "Surabaya, Indonesia",
   copyright: "(c) 2026 Naufal Syafi' Hakim. All rights reserved.",
 };
