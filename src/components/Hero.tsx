@@ -4,7 +4,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
 import Marquee from "@/src/components/Marquee";
-import { heroSkills, profile, cvUrl } from "@/src/data/content";
+import { profile, cvUrl } from "@/src/data/content";
 
 const container = {
   hidden: {},
@@ -26,11 +26,6 @@ export default function Hero() {
 
       <div className="relative mx-auto grid min-h-[calc(100svh-44px)] max-w-7xl items-center gap-8 px-5 pb-8 pt-24 sm:px-8 lg:grid-cols-[1.08fr_0.92fr] lg:gap-12 lg:px-12 lg:pb-8 lg:pt-24">
         <motion.div variants={container} initial="hidden" animate="show" className="relative z-10">
-          <motion.div variants={item} className="mb-5 flex items-center gap-3 text-[10px] font-bold uppercase tracking-[0.2em] text-white/60">
-            <span className="size-2 rounded-full bg-acid" />
-            {profile.location} · Portfolio 2026
-          </motion.div>
-
           <motion.h1
             variants={item}
             className="max-w-none font-display font-bold text-[clamp(2.4rem,5.5vw,5.1rem)] leading-[0.92] tracking-[-0.06em] text-white lg:whitespace-nowrap"
@@ -41,7 +36,7 @@ export default function Hero() {
           <motion.div variants={item} className="mt-5 flex max-w-2xl items-start gap-3 sm:gap-4">
             <ArrowRight className="mt-1 size-7 shrink-0 text-acid sm:size-9" strokeWidth={2} />
             <p className="text-[clamp(1.1rem,2vw,1.75rem)] font-medium leading-[1.05] tracking-tight text-white">
-              an <span className="font-serif font-normal italic tracking-[-0.08em] text-acid">information technology student</span> building with data, systems, and curiosity.
+              a <span className="font-serif font-normal italic tracking-[-0.08em] text-acid">Software Engineer</span> building with data, systems, and curiosity.
             </p>
           </motion.div>
 
@@ -65,17 +60,6 @@ export default function Hero() {
               <Download className="size-4" />
               Download CV
             </a>
-          </motion.div>
-
-          <motion.div variants={item} className="mt-7 flex max-w-2xl flex-wrap gap-2">
-            {heroSkills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full border border-white/15 bg-white/[0.06] px-3 py-1.5 text-[10px] font-semibold uppercase tracking-[0.14em] text-white/70"
-              >
-                {skill}
-              </span>
-            ))}
           </motion.div>
         </motion.div>
 

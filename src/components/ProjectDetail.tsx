@@ -97,21 +97,16 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
           </div>
 
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">Live preview</p>
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">Gallery</p>
             <div className="relative mt-3 aspect-[16/10] overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
               <Image
                 src={project.image}
-                alt={`${project.title} preview image`}
+                alt={`${project.title} gallery image`}
                 fill
                 className="object-cover grayscale"
                 sizes="(max-width: 1024px) 100vw, 40rem"
               />
             </div>
-            {!project.livePreview && (
-              <p className="mt-3 text-sm text-neutral-500">
-                This project does not have a browser-based live preview. See the source repository for details.
-              </p>
-            )}
           </div>
         </div>
       </motion.div>

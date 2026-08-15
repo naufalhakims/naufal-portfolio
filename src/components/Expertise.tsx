@@ -61,7 +61,6 @@ export default function Expertise() {
               <p className="mt-1 text-sm text-neutral-600">{education.degree}</p>
             </div>
             <div className="shrink-0 text-left sm:text-right">
-              <p className="font-display font-bold text-2xl text-black">{education.gpa}</p>
               <p className="mt-1 text-xs font-semibold uppercase tracking-[0.15em] text-neutral-500">
                 {education.period}
               </p>

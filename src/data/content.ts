@@ -9,7 +9,7 @@ export const profile = {
   phone: "+6288806898411",
   linkedin: "https://www.linkedin.com/in/naufal-syafi-hakim",
   summary:
-    "Third-year Information Technology student at Institut Teknologi Sepuluh Nopember (ITS) with hands-on experience in data pipelines, applied AI, and teaching. Based in Surabaya, Indonesia.",
+    "I build apps that people love to use",
   bio: [
     "Third-year Information Technology student at Institut Teknologi Sepuluh Nopember (ITS) with a solid foundation in programming, data analysis, and system thinking, plus hands-on exposure to applied AI concepts.",
     "I adapt quickly to new tools and technologies, work effectively in team-based environments, and I'm motivated to gain hands-on experience across software development and data-driven roles.",
@@ -28,8 +28,6 @@ export const nav = [
   { label: "Contact", href: "#contact" },
 ];
 
-export const heroSkills = ["Python", "SQL", "Selenium", "MongoDB", "Metabase", "Figma"];
-
 export const tickerItems = [
   "Python",
   "SQL",
@@ -42,15 +40,15 @@ export const tickerItems = [
 ];
 
 export const expertise = {
-  headline: "TECHNICAL EXPERTISE",
+  headline: "About Me",
   filters: [],
   stats: [
-    { value: "4", label: "Work experiences — Internships & Assistant Lecturer" },
-    { value: "2", label: "Organizational roles at HMIT ITS" },
-    { value: "13", label: "Projects completed — web, data & design" },
-    { value: "3.81/4.00", label: "Current GPA at ITS", featured: true },
-    { value: "38", label: "Technologies mastered — experiences & projects" },
-    { value: "1x", label: "Finalist of data competition" },
+    { value: "3.81/4.00", label: "GPA", featured: true },
+    { value: "4", label: "Work experiences" },
+    { value: "2", label: "Organizational roles" },
+    { value: "12+", label: "Projects" },
+    { value: "30+", label: "TechStack" },
+    { value: "1x", label: "Finalist of Competition" },
   ],
 };
 
@@ -102,7 +100,7 @@ export const experience: Experience[] = [
   {
     role: "Data Scientist Intern",
     org: "Social Economic Accelerator Lab",
-    location: "Surabaya, Indonesia",
+    location: "Malang, Indonesia",
     period: "Feb 2026 - Jul 2026",
     type: "work",
     points: [
@@ -288,13 +286,14 @@ export const certifications = [
   { year: "2025", name: "Python for Data Science", issuer: "IBM" },
   { year: "2025", name: "LLM Guide for Developers: Basics to Practical Applications", issuer: "Udemy" },
   { year: "2025", name: "Advanced Training for Organizational Management", issuer: "HMIT ITS" },
+  { year: "2026", name: "Associate Data Scientist", issuer: "Digitalent" },
+  {year: "2026", name: "Data Science Competition Finalist", issuer: "Gammafest IPB University" },
 ];
 
 export const education = {
   school: "Institut Teknologi Sepuluh Nopember",
   degree: "Bachelor of Information Technology",
-  period: "Aug 2023 - Aug 2027 (Expected)",
-  gpa: "3.81/4.00",
+  period: "2023 - 2027 (Expected)",
   location: "Surabaya, Indonesia",
 };
 
