@@ -8,6 +8,26 @@ import { experience, experienceFilters } from "@/src/data/content";
 
 type FilterKey = "all" | "work" | "organization";
 
+// Bolds numeric achievements like "400+" or "90%" inside a bullet point.
+const NUM_RE = /(\d[\d,]*\.?\d*\s?(?:GB|MB|KB|ms)?%?\+?)/;
+
+function Highlight({ text }: { text: string }) {
+  const parts = text.split(NUM_RE);
+  return (
+    <span>
+      {parts.map((part, i) =>
+        i % 2 === 1 ? (
+          <strong key={i} className="font-bold text-black">
+            {part}
+          </strong>
+        ) : (
+          part
+        ),
+      )}
+    </span>
+  );
+}
+
 export default function ExperienceGrid() {
   const [filter, setFilter] = useState<FilterKey>("all");
 
@@ -75,7 +95,7 @@ export default function ExperienceGrid() {
                         {exp.points.map((point, index) => (
                           <li key={`${point}-${index}`} className="flex gap-2 text-sm leading-relaxed text-black/70">
                             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-black/50" />
-                            {point}
+                            <Highlight text={point} />
                           </li>
                         ))}
                       </ul>
@@ -103,7 +123,7 @@ export default function ExperienceGrid() {
                         {exp.points.map((point) => (
                           <li key={point} className="flex gap-2 text-xs leading-relaxed text-neutral-600">
                             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-acid" />
-                            {point}
+                            <Highlight text={point} />
                           </li>
                         ))}
                       </ul>

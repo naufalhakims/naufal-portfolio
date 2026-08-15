@@ -18,10 +18,9 @@ export const profile = {
 
 export const cvUrl = "/resume.pdf"; // TODO: drop your real resume PDF in /public as resume.pdf
 
-export const heroPhoto = "/photos/naufal-portrait.jpg";
+export const heroPhoto = "/photos/naufal-selfie.jpeg";
 
 export const nav = [
-  { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
   { label: "Experience", href: "#experience" },
   { label: "Projects", href: "#projects" },
@@ -44,11 +43,14 @@ export const tickerItems = [
 
 export const expertise = {
   headline: "TECHNICAL EXPERTISE",
-  filters: ["Data", "Development"],
+  filters: [],
   stats: [
-    { value: "6,000+", label: "Records extracted via automated data pipeline" },
-    { value: "3.75/4.00", label: "Current GPA at ITS", featured: true },
-    { value: "90%+", label: "Positive feedback as a Database Systems Assistant Lecturer" },
+    { value: "2", label: "Internship experiences — Fullstack & Data Scientist" },
+    { value: "2", label: "Organizational roles at HMIT ITS" },
+    { value: "13", label: "Projects completed — web, data & design" },
+    { value: "3.81/4.00", label: "Current GPA at ITS", featured: true },
+    { value: "2", label: "Assistant lecturer experiences — Database & Ethics" },
+    { value: "1x", label: "Finalist of data competition" },
   ],
 };
 
@@ -292,7 +294,7 @@ export const education = {
   school: "Institut Teknologi Sepuluh Nopember",
   degree: "Bachelor of Information Technology",
   period: "Aug 2023 - Aug 2027 (Expected)",
-  gpa: "3.75/4.00",
+  gpa: "3.81/4.00",
   location: "Surabaya, Indonesia",
 };
 

@@ -10,16 +10,18 @@ export default function Expertise() {
             <h2 className="font-display font-bold text-[clamp(2rem,5vw,3.75rem)] uppercase leading-[0.92] tracking-tight text-black">
               {expertise.headline}
             </h2>
-            <div className="flex flex-wrap gap-2.5">
-              {expertise.filters.map((f) => (
-                <span
-                  key={f}
-                  className="rounded-full border border-neutral-300 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-600"
-                >
-                  {f}
-                </span>
-              ))}
-            </div>
+            {expertise.filters.length > 0 && (
+              <div className="flex flex-wrap gap-2.5">
+                {expertise.filters.map((f) => (
+                  <span
+                    key={f}
+                    className="rounded-full border border-neutral-300 px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] text-neutral-600"
+                  >
+                    {f}
+                  </span>
+                ))}
+              </div>
+            )}
           </div>
         </Reveal>
 
