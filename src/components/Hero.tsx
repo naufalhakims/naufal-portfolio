@@ -84,21 +84,26 @@ export default function Hero() {
             <span aria-hidden="true" className="absolute left-3 top-3 size-4 border-l-2 border-t-2 border-acid" />
             <span aria-hidden="true" className="absolute bottom-3 right-3 size-4 border-b-2 border-r-2 border-acid" />
 
-            {/* cutout portrait */}
+            {/* photographic portrait — full-bleed JPG */}
             <Image
-              src="/photos/naufal-cutout.png"
+              src="/photos/naufal-portrait.jpg"
               alt={`Portrait of ${profile.firstName} ${lastName}`}
               fill
               priority
               sizes="(max-width: 1024px) 85vw, 22rem"
-              className="object-contain grayscale contrast-105 drop-shadow-[0_16px_30px_rgba(0,0,0,0.6)]"
+              className="object-cover grayscale contrast-110"
+              style={{ objectPosition: "50% 30%" }}
             />
+            {/* acid duotone tint */}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-tr from-acid/10 via-transparent to-black/30 mix-blend-soft-light" />
+            {/* inner hairline frame — photographic print border */}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-3 border border-white/10" />
 
             {/* top spec strip */}
             <div className="absolute inset-x-0 top-0 bg-gradient-to-b from-black/75 to-transparent px-5 pb-8 pt-4">
               <div className="flex items-start justify-between gap-4">
-                <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-acid">Fig. 01 — Portrait</p>
-                <p className="text-right text-[9px] font-bold uppercase tracking-[0.28em] text-white/70">Hello!</p>
+                <p className="text-[9px] font-bold uppercase tracking-[0.28em] text-acid">portfolio</p>
+                <p className="text-right text-[9px] font-bold uppercase tracking-[0.28em] text-white/70">2026</p>
               </div>
             </div>
 

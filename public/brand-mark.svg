@@ -1,0 +1,7 @@
+<svg width="256" height="256" viewBox="0 0 256 256" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Naufal Hakim monogram</title>
+  <rect x="8" y="8" width="240" height="240" rx="58" fill="#0A0A0A"/>
+  <path d="M52 198V58H87L169 144V58H204V198H169L87 112V198H52Z" fill="#D4FF3D"/>
+  <circle cx="204" cy="48" r="13" fill="#FFFFFF"/>
+  <circle cx="204" cy="48" r="5" fill="#D4FF3D"/>
+</svg>

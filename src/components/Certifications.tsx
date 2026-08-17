@@ -25,7 +25,7 @@ export default function Certifications() {
           {certifications.map((cert, i) => (
             <Reveal key={cert.name} delay={i * 0.05}>
               <li className="group flex flex-col gap-2 py-4 transition-colors sm:flex-row sm:items-center sm:gap-6">
-                <span className="w-16 shrink-0 font-display font-bold text-2xl text-neutral-400 transition-colors group-hover:text-acid">
+                <span className="w-16 shrink-0 font-display font-bold text-2xl text-neutral-400 transition-[color,-webkit-text-stroke] group-hover:text-acid group-hover:[-webkit-text-stroke:0.5px_#0A0A0A]">
                   {cert.year}
                 </span>
                 <h3 className="flex-1 text-base font-bold leading-snug text-black">{cert.name}</h3>

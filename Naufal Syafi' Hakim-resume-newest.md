@@ -36,6 +36,7 @@ _Project Officer of Basic Media Schooling HMIT ITS 2025_
 
 **Institut Teknologi Sepuluh Nopember - Surabaya, Indonesia** Aug 2023 - Aug 2027 (Expected) _Bachelor of Information Technology, 3.75/4.00_ **Organization Experiences Himpunan Mahasiswa Teknologi Informasi ITS - Surabaya, Indonesia** Mar 2025 - Jan 2026 
 
+## **Organization Experiences** 
 _Media & Information Staff_ 
 
 - Created and published visual and written content for organizational social media, generating 4,000+ engagements and contributing to 1,500+ new followers. 
@@ -61,5 +62,7 @@ Conducting weekly design assists significantly improves the quality of posts and
 
 **Python for Data Science** (2025): Issued by IBM 
 
-**LLM Guide for Developers Basics to Practical Applications** (2025): Issued by Udemy **Advanced Training for Organizational Management HMIT** (2025): Issued by HMIT ITS 
+**LLM Guide for Developers Basics to Practical Applications** (2025): Issued by Udemy 
+
+**Advanced Training for Organizational Management HMIT** (2025): Issued by HMIT ITS 
 

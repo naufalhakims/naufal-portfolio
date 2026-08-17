@@ -29,14 +29,14 @@ export const nav = [
 ];
 
 export const tickerItems = [
-  "Python",
-  "SQL",
-  "Selenium",
-  "Metabase",
-  "MongoDB",
-  "Data Analysis",
-  "Figma",
-  "Canva",
+  "Selamat datang",
+  "Welcome",
+  "Bienvenido",
+  "أهلاً وسهلاً",
+  "Willkommen",
+  "ようこそ",
+  "Bienvenue",
+  "欢迎",
 ];
 
 export const expertise = {
@@ -303,7 +303,7 @@ export const aboutMePhoto = {
 };
 
 export const footerContact = {
-  wordmark: "LET'S talk",
+  wordmark: "LET'S TALK!",
   email: "naufalsyafi4@gmail.com",
   linkedin: "linkedin.com/in/naufal-syafi-hakim",
   instagram: "https://www.instagram.com/nplhkm._/",

@@ -6,6 +6,9 @@ export const metadata: Metadata = {
   title: `${profile.name} — Data Scientist Intern`,
   description:
     "Portfolio of Naufal Syafi' Hakim — Information Technology student and Data Scientist Intern at ITS, Surabaya. Data pipelines, applied AI, and teaching.",
+  icons: {
+    icon: [{ url: "/brand-mark.svg", type: "image/svg+xml" }],
+  },
   openGraph: {
     title: `${profile.name} — Data Scientist Intern`,
     description:
