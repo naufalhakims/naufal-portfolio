@@ -1,7 +1,7 @@
 // All site content lives here. Edit text in one place without touching JSX.
 
 export const profile = {
-  name: "Naufal Hakim",
+  name: "Naufal Syafi' H.",
   firstName: "Naufal",
   role: "Information Technology Student - Data Scientist Intern",
   location: "Surabaya, Indonesia",
@@ -43,11 +43,11 @@ export const expertise = {
   headline: "About Me",
   filters: [],
   stats: [
-    { value: "3.81/4.00", label: "GPA", featured: true },
-    { value: "4", label: "Work experiences" },
+    { value: "3.81", label: "GPA / 4.0", featured: true },
+    { value: "5", label: "Work experiences" },
     { value: "2", label: "Organizational roles" },
     { value: "12+", label: "Projects" },
-    { value: "30+", label: "TechStack" },
+    { value: "20+", label: "Tech Stack" },
     { value: "1x", label: "Finalist of Competition" },
   ],
 };
@@ -182,7 +182,8 @@ export interface Project {
 export const projects: Project[] = [
   {
     title: "Telkomsel Internal Salesforce Tracking Web Application",
-    description: "A real-time salesforce location dashboard with geospatial visualization and historical route replay.",
+    description:
+      "An internal real-time tracking platform for monitoring Salesforce positions and field activity through a geospatial dashboard. The system combines layered GPS maps, outlet geofences, GeoJSON boundaries, seven-day route replay, automated stop detection, and achievement tracking so teams can understand both current coverage and historical movement. Its supporting services handle continuous location ingestion, asynchronous geofence processing, and mobile background tracking with an offline-first queue for more resilient field data collection.",
     tags: ["Django", "Python", "PostgreSQL", "Next.js", "TypeScript", "React", "Leaflet.js"],
     image: "/photos/telkomsel-project.png",
     link: "#",
@@ -192,7 +193,8 @@ export const projects: Project[] = [
   },
   {
     title: "Film Recommendation Similarity System",
-    description: "A web application that recommends similar films using a big-data implementation.",
+    description:
+      "A comprehensive film recommendation system built as a Big Data final project to address large-scale catalog processing, real-time activity ingestion, personalization, and film discovery. A Kafka producer streams records from the film dataset into the pipeline, MinIO stores the streamed and batch data as S3-compatible object storage, and Apache Spark handles both real-time processing and batch machine-learning workflows, with model training scheduled every five minutes. The Dockerized architecture brings these services together with a Streamlit dashboard for monitoring ingestion and processing, browsing film posters and details, searching the catalog, and viewing model-generated recommendations.",
     tags: ["Apache PySpark", "MinIO", "Streamlit", "Apache Kafka", "Docker", "Python"],
     image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80",
     link: "https://github.com/naufalhakims/bigdata-final-project",
@@ -200,7 +202,8 @@ export const projects: Project[] = [
   },
   {
     title: "EDA on Employee Dataset",
-    description: "An exploratory analysis of employee data to uncover trends and relationships between variables.",
+    description:
+      "A structured exploratory data analysis of an employee dataset, designed to turn raw workforce records into interpretable trends and relationships. The notebook uses Pandas for inspection and transformation, then combines Matplotlib and Seaborn visualizations with descriptive analysis to examine distributions, compare variables, and surface correlations that could guide later workforce or machine-learning work.",
     tags: ["Jupyter Notebook", "Python", "Pandas", "Matplotlib", "Seaborn"],
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1600&q=80",
     link: "https://www.kaggle.com/code/naufalhakim123/modul-1",
@@ -208,7 +211,8 @@ export const projects: Project[] = [
   },
   {
     title: "Classification and Regression on Estimated Delivery Time",
-    description: "A supervised learning project that predicts estimated delivery time using classification and regression algorithms.",
+    description:
+      "A supervised-learning study focused on estimating delivery time from the available order and delivery features. It frames the problem through both classification and regression perspectives, using Python and Pandas for preparation, visual analysis to understand the target, and comparative model evaluation to examine how different approaches handle delivery-time prediction. The notebook documents the path from data exploration to measurable predictive results.",
     tags: ["Jupyter Notebook", "Python", "Pandas", "Matplotlib", "Seaborn"],
     image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&fit=crop&w=1600&q=80",
     link: "https://www.kaggle.com/code/naufalhakim123/ai-modul-2",
@@ -216,7 +220,8 @@ export const projects: Project[] = [
   },
   {
     title: "Unsupervised Learning on Economic Profile Countries Dataset",
-    description: "A clustering analysis of countries based on economic profiles to identify patterns and groupings.",
+    description:
+      "An unsupervised-learning project that groups countries according to similarities in their economic profiles rather than relying on predefined labels. The workflow prepares and explores country-level indicators with Pandas and NumPy, applies scikit-learn clustering techniques, and visualizes the resulting segments with Matplotlib and Seaborn. The analysis makes it easier to compare development patterns and interpret which countries share similar economic characteristics.",
     tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn"],
     image: "https://images.unsplash.com/photo-1521292270410-a8c4d716d518?auto=format&fit=crop&w=1600&q=80",
     link: "https://www.kaggle.com/code/naufalhakim123/prak-3",
@@ -224,7 +229,8 @@ export const projects: Project[] = [
   },
   {
     title: "Sign Language Model Predictor using CNN",
-    description: "A convolutional neural network that predicts sign language gestures from images.",
+    description:
+      "An image-classification project that uses a convolutional neural network to recognize sign-language gestures from visual input. The notebook covers the preparation and inspection of image data, the training of a model to distinguish gesture classes, and the evaluation of its predictions using Python’s data-science tooling. It demonstrates how computer vision can turn hand-sign imagery into a more accessible machine-readable signal.",
     tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn"],
     image: "https://www.mdpi.com/asi/asi-06-00035/article_deploy/html/images/asi-06-00035-g014.png",
     link: "https://www.kaggle.com/code/naufalhakim123/akseleratorgacor",
@@ -232,7 +238,8 @@ export const projects: Project[] = [
   },
   {
     title: "Twitter Sentiment Analysis",
-    description: "An NLP project that classifies tweets as positive, negative, or neutral.",
+    description:
+      "A natural-language-processing project that analyzes Twitter text and classifies each post into positive, negative, or neutral sentiment. The workflow prepares noisy short-form text for modeling, explores the distribution of sentiment in the dataset, and combines traditional Python analysis tools with NLTK and TensorFlow to build and assess a text-classification pipeline. The result is a practical example of extracting public opinion signals from social media language.",
     tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Seaborn", "NLTK", "TensorFlow"],
     image: "https://images.unsplash.com/photo-1611605698335-8b1569810432?auto=format&fit=crop&w=1600&q=80",
     link: "https://www.kaggle.com/code/naufalhakim123/modul-5",
@@ -240,7 +247,8 @@ export const projects: Project[] = [
   },
   {
     title: "Emotion Prediction Classification from Text",
-    description: "A machine learning model that classifies text into emotion categories such as happy, sad, and angry.",
+    description:
+      "A text-classification project that predicts the emotional category expressed in a piece of writing, including states such as happiness, sadness, and anger. It combines exploratory analysis and text preparation with numerical feature handling, visualization, and a PyTorch-based modeling workflow to learn patterns in language. The project focuses on the full path from raw text to an interpretable emotion prediction task.",
     tags: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "PyTorch"],
     image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1600&q=80",
     link: "https://www.kaggle.com/code/naufalhakim123/modul6-lastt",
@@ -248,7 +256,8 @@ export const projects: Project[] = [
   },
   {
     title: "RAG Model for Question Answering",
-    description: "A retrieval-augmented generation model that combines information retrieval and generative modeling to answer questions from a given context.",
+    description:
+      "A compact retrieval-augmented question-answering application that grounds generated responses in a provided context instead of relying only on a model’s general knowledge. The project uses SQLite to organize the local information, retrieves relevant context for a question, and sends that context through the Groq API before presenting the answer in a lightweight HTML interface. It demonstrates the core RAG loop in a small, understandable application rather than hiding the process behind a large framework.",
     tags: ["Python", "Groq API", "SQLite", "HTML"],
     image: "/photos/rag-project.png",
     link: "https://github.com/naufalhakims/rag-short-project",
@@ -256,7 +265,8 @@ export const projects: Project[] = [
   },
   {
     title: "BisaKita Donation Web App",
-    description: "A donation platform with admin and user authentication, campaign creation, payment gateway integration, and MongoDB storage.",
+    description:
+      "A full-stack donation platform designed to support the complete campaign lifecycle for both contributors and administrators. Users can register, authenticate, browse campaigns, and contribute, while administrators can manage campaign content and operational data through protected flows. Built with Vue and TypeScript on the application side and MongoDB for persistence, the project also explores payment-gateway integration so a donation can move from discovery to checkout in one product experience.",
     tags: ["Vue.js", "TypeScript", "MongoDB", "Git"],
     image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1600&q=80",
     link: "https://github.com/naufalhakims/pweb-fp-P05-2024",
@@ -264,7 +274,8 @@ export const projects: Project[] = [
   },
   {
     title: "HMIT Tuas Prakarsa Media and Information",
-    description: "Poster, banner, and social media content designed for HMIT and shared through @hmit_its on Instagram.",
+    description:
+      "A visual communication system created for HMIT Tuas Prakarsa across posters, banners, and social-media posts. The work translates event and organizational information into a consistent set of layouts that can remain legible and recognizable across different formats, while keeping the campaign presence coherent on Instagram. Figma was used to develop and adapt the assets for publication through the HMIT ITS media channel.",
     tags: ["Figma"],
     image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80",
     link: "https://www.instagram.com/hmit_its/",
@@ -272,7 +283,8 @@ export const projects: Project[] = [
   },
   {
     title: "A Renewal Agent 6.0 Design and Documentation",
-    description: "Poster, banner, and social media content designed for A Renewal Agent 6.0 and shared through @ara_its on Instagram.",
+    description:
+      "A campaign design and documentation set for A Renewal Agent 6.0, covering promotional posters, banners, and social-media content. The project turns the event’s identity and communication needs into reusable visual assets, balancing hierarchy, consistency, and platform-specific sizing so the material works across both physical and digital touchpoints. The final designs were prepared in Figma and published through the event’s Instagram presence.",
     tags: ["Figma"],
     image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&q=80",
     link: "https://www.instagram.com/ara_its/",
