@@ -3,16 +3,16 @@ import "./globals.css";
 import { profile } from "@/src/data/content";
 
 export const metadata: Metadata = {
-  title: `${profile.name} — Data Scientist Intern`,
+  title: `${profile.name} - Software Engineer`,
   description:
-    "Portfolio of Naufal Syafi' Hakim — Information Technology student and Data Scientist Intern at ITS, Surabaya. Data pipelines, applied AI, and teaching.",
+    "Portfolio of Naufal Syafi' Hakim — Information Technology student at ITS with Software Engineering, Data & AI interests.",
   icons: {
-    icon: [{ url: "/brand-mark.svg", type: "image/svg+xml" }],
+    icon: [{ url: "/photos/aples-logo.png", type: "image/png" }],
   },
   openGraph: {
-    title: `${profile.name} — Data Scientist Intern`,
+    title: `${profile.name} — Software Engineer`,
     description:
-      "Information Technology student & Data Scientist Intern. Data pipelines, applied AI, and teaching. Based in Surabaya, Indonesia.",
+      "Information Technology student with Software Engineering, Data & AI interests. Based in Surabaya, Indonesia.",
     type: "website",
   },
 };

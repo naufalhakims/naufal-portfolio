@@ -1,7 +1,7 @@
 // All site content lives here. Edit text in one place without touching JSX.
 
 export const profile = {
-  name: "Naufal Syafi' H.",
+  name: "Naufal Syafi' Hakim",
   firstName: "Naufal",
   role: "Information Technology Student - Data Scientist Intern",
   location: "Surabaya, Indonesia",
@@ -9,14 +9,14 @@ export const profile = {
   phone: "+6288806898411",
   linkedin: "https://www.linkedin.com/in/naufal-syafi-hakim",
   summary:
-    "I build apps that people love to use",
+    "Final- year Information Technology student at Institut Teknologi Sepuluh Nopember with internship experience, organizational involvement, and experience as a teaching assistant. Has a solid foundation in programming and system thinking, with exposure to applied AI concepts. Adapts quickly to new tools and technologies, works effectively in team-based environments, and is motivated to further develop hands-on experience across software development and data-driven roles.",
   bio: [
     "Third-year Information Technology student at Institut Teknologi Sepuluh Nopember (ITS) with a solid foundation in programming, data analysis, and system thinking, plus hands-on exposure to applied AI concepts.",
     "I adapt quickly to new tools and technologies, work effectively in team-based environments, and I'm motivated to gain hands-on experience across software development and data-driven roles.",
   ],
 };
 
-export const cvUrl = "/resume.pdf"; // TODO: drop your real resume PDF in /public as resume.pdf
+export const cvUrl = "/resume.pdf";
 
 export const heroPhoto = "/photos/naufal-selfie.jpeg";
 
@@ -80,12 +80,13 @@ export const experience: Experience[] = [
     type: "work",
     featured: true,
     points: [
-      "Built a real-time Live Tracker Dashboard Web Application with multi-layer GPS map rendering for salesforce positions, outlet geofences, GeoJSON cluster boundaries, 7-day historical route replay, automated stop detection, and achievements tracking.",
+      "Built a real-time Live Tracker Dashboard Web Application with multi-layer GPS map rendering for salesforce positions, outlet geofences, GeoJSON 15+ cluster boundaries, one-week historical route replay, automated stop detection, and achievements tracking to reduce manual audit effort and enable faster performance visualization.",
       "Architected a high-throughput Django location ingestion API handling continuous GPS coordinates from 400+ devices with idempotent event processing, deduplication, and real-time geofence triggering.",
       "Designed and implemented an asynchronous geofencing worker using PostgreSQL as a durable job queue, achieving production p95 latency under 200ms and queue lag under 2 seconds.",
-      "Engineered a React Native (Expo) Android app with persistent background GPS tracking, native Kotlin modules for mock-GPS detection and OS kill-resistance, and an offline-first location queue with zero data loss during network outages.",
+      "Engineered a React Native (Expo) Android app with persistent background GPS tracking, native Kotlin modules for mock-GPS detection and OS kill-resistance, and an offline-first location queue with 0% data loss during network outages.",
+      "Built an end-to-end sales analytics platform for Telkomsel, featuring a custom ETL pipeline that parsed and reconciled 50,000+ monthly multi-source transaction records across national distribution channels.",
     ],
-    techStack: ["Next.js 14", "TypeScript", "React Native", "Django 5", "PostgreSQL", "Leaflet.js", "Kotlin", "Gunicorn", "Nginx", "PM2"],
+    techStack: ["Next.js 14", "TypeScript", "React Native", "Django 5", "PostgreSQL", "Leaflet.js", "Kotlin", "Virtual Private Server", "Laravel", "PHP"],
   },
   {
     role: "Vice Head of Media & Information Department",
@@ -185,11 +186,21 @@ export const projects: Project[] = [
     description:
       "An internal real-time tracking platform for monitoring Salesforce positions and field activity through a geospatial dashboard. The system combines layered GPS maps, outlet geofences, GeoJSON boundaries, seven-day route replay, automated stop detection, and achievement tracking so teams can understand both current coverage and historical movement. Its supporting services handle continuous location ingestion, asynchronous geofence processing, and mobile background tracking with an offline-first queue for more resilient field data collection.",
     tags: ["Django", "Python", "PostgreSQL", "Next.js", "TypeScript", "React", "Leaflet.js"],
-    image: "/photos/telkomsel-project.png",
+    image: "/photos/live-track-telkom.png",
     link: "#",
     sourcePrivate: true,
     category: "web",
     featured: true,
+  },
+  {
+    title: "Telkomsel Postpaid Channel Performance",
+    description:
+    "The Postpaid Channel Performance & Sales Intelligence Platform is an enterprise web application designed to consolidate, normalize, and visualize large-scale commercial performance data across nationwide multi-tier distribution channels, including national retail chains, direct sales agencies, digital platforms, and walk-in service centers. Developed using Laravel 12 and a modern web stack, the system automates monthly reporting workflows through custom data-extraction bots for proprietary internal portals, an automated CAPTCHA-solving integration, an ETL pipeline reconciling 50,000+ monthly transaction records, fuzzy-matching algorithms for retailer alias normalization, and cross-platform JWT Single Sign-On (SSO). It delivers interactive analytics enabling executive and regional management to track revenue growth, target achievement rates, activation SLA turnaround times, and retail store productivity across granular geographic hierarchies.",
+    tags: ["php", "Laravel", "Rest API", "JavaScript"],
+    image: "/photos/postpaid-dashboard.png",
+    link: "#",
+    sourcePrivate: true,
+    category: "web",
   },
   {
     title: "Film Recommendation Similarity System",
@@ -276,8 +287,8 @@ export const projects: Project[] = [
     title: "HMIT Tuas Prakarsa Media and Information",
     description:
       "A visual communication system created for HMIT Tuas Prakarsa across posters, banners, and social-media posts. The work translates event and organizational information into a consistent set of layouts that can remain legible and recognizable across different formats, while keeping the campaign presence coherent on Instagram. Figma was used to develop and adapt the assets for publication through the HMIT ITS media channel.",
-    tags: ["Figma"],
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=1600&q=80",
+    tags: ["Figma", "Canva", "Adobe"],
+    image: "/photos/hmit-tuas.png",
     link: "https://www.instagram.com/hmit_its/",
     category: "design",
   },
@@ -285,8 +296,8 @@ export const projects: Project[] = [
     title: "A Renewal Agent 6.0 Design and Documentation",
     description:
       "A campaign design and documentation set for A Renewal Agent 6.0, covering promotional posters, banners, and social-media content. The project turns the event’s identity and communication needs into reusable visual assets, balancing hierarchy, consistency, and platform-specific sizing so the material works across both physical and digital touchpoints. The final designs were prepared in Figma and published through the event’s Instagram presence.",
-    tags: ["Figma"],
-    image: "https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1600&q=80",
+    tags: ["Figma", "Canva", "Adobe"],
+    image: "/photos/arawr.svg",
     link: "https://www.instagram.com/ara_its/",
     category: "design",
   },
@@ -315,7 +326,7 @@ export const aboutMePhoto = {
 };
 
 export const footerContact = {
-  wordmark: "LET'S TALK!",
+  wordmark: "let's connect!",
   email: "naufalsyafi4@gmail.com",
   linkedin: "linkedin.com/in/naufal-syafi-hakim",
   instagram: "https://www.instagram.com/nplhkm._/",

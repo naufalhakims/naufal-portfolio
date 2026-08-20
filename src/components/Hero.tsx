@@ -21,6 +21,18 @@ export default function Hero() {
 
   return (
     <section id="home" data-theme="dark" className="relative min-h-screen overflow-hidden bg-black">
+      <Image
+        src="/photos/sigma-bg.webp"
+        alt=""
+        fill
+        priority
+        sizes="100vw"
+        aria-hidden="true"
+        className="pointer-events-none object-cover object-[right_top] lg:object-center"
+      />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-black/45" />
+      <div aria-hidden="true" className="pointer-events-none absolute inset-0 bg-gradient-to-r from-black/80 via-black/45 to-black/20" />
+
       <div className="relative mx-auto grid min-h-[calc(100svh-44px)] max-w-7xl items-center gap-8 px-5 pb-8 pt-24 sm:px-8 lg:grid-cols-[1.18fr_0.82fr] lg:gap-12 lg:px-12 lg:pb-8 lg:pt-24">
         <motion.div variants={container} initial="hidden" animate="show" className="relative z-10">
           <motion.h1
@@ -60,24 +72,6 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
-          className="relative mx-auto w-full max-w-[22rem] lg:justify-self-end lg:translate-x-20"
-        >
-          <div className="relative aspect-[3/5] overflow-hidden rounded-3xl bg-white/[0.02]">
-            <Image
-              src="/photos/naufal-selfie.jpeg"
-              alt={`Portrait of ${profile.firstName} ${lastName}`}
-              fill
-              priority
-              sizes="(max-width: 1024px) 85vw, 22rem"
-              className="object-cover grayscale contrast-110"
-              style={{ objectPosition: "50% 30%" }}
-            />
-          </div>
-        </motion.div>
       </div>
 
       <div className="lg:absolute lg:inset-x-0 lg:bottom-0">

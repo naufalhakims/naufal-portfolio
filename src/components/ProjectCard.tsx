@@ -37,7 +37,7 @@ export default function ProjectCard({ project, onOpen }: ProjectCardProps) {
           src={project.image}
           alt={`${project.title} project`}
           fill
-          className="object-cover grayscale transition-transform duration-500 group-hover:scale-105"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
           sizes="(max-width: 1024px) 100vw, 40rem"
         />
       </div>

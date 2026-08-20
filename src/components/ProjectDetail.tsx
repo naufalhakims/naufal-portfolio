@@ -103,7 +103,7 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
                 src={project.image}
                 alt={`${project.title} gallery image`}
                 fill
-                className="object-cover grayscale"
+                className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40rem"
               />
             </div>
