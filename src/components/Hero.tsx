@@ -49,7 +49,7 @@ export default function Hero() {
             </p>
           </motion.div>
 
-          <motion.p variants={item} className="mt-7 max-w-xl text-sm leading-relaxed text-white/60 sm:text-[15px]">
+          <motion.p variants={item} className="mt-7 max-w-xl text-sm leading-relaxed text-white sm:text-[15px]">
             {profile.summary}
           </motion.p>
 

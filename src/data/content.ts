@@ -9,7 +9,7 @@ export const profile = {
   phone: "+6288806898411",
   linkedin: "https://www.linkedin.com/in/naufal-syafi-hakim",
   summary:
-    "Final- year Information Technology student at Institut Teknologi Sepuluh Nopember with internship experience, organizational involvement, and experience as a teaching assistant. Has a solid foundation in programming and system thinking, with exposure to applied AI concepts. Adapts quickly to new tools and technologies, works effectively in team-based environments, and is motivated to further develop hands-on experience across software development and data-driven roles.",
+    "Final-year Information Technology student at Institut Teknologi Sepuluh Nopember with internship experience, organizational involvement, and experience as a teaching assistant. Has a solid foundation in programming and system thinking, with exposure to applied AI concepts. Adapts quickly to new tools and technologies, works effectively in team-based environments, and is motivated to further develop hands-on experience across software development and data-driven roles 💖",
   bio: [
     "Third-year Information Technology student at Institut Teknologi Sepuluh Nopember (ITS) with a solid foundation in programming, data analysis, and system thinking, plus hands-on exposure to applied AI concepts.",
     "I adapt quickly to new tools and technologies, work effectively in team-based environments, and I'm motivated to gain hands-on experience across software development and data-driven roles.",
@@ -125,17 +125,6 @@ export const experience: Experience[] = [
     techStack: ["Figma", "Canva", "Adobe"],
   },
   {
-    role: "Assistant Lecturer of Law and Ethics of Information Technology",
-    org: "Institut Teknologi Sepuluh Nopember",
-    location: "Surabaya, Indonesia",
-    period: "Sep 2025 - Dec 2025",
-    type: "work",
-    points: [
-      "Provided structured feedback on student performance and handled grade-related inquiries while maintaining grade records in Excel, clarifying 90% of miscommunication between students.",
-      "Filled in for 100% of lectures when the lecturer was unavailable to maintain class continuity.",
-    ],
-  },
-  {
     role: "Project Officer of Basic Media Schooling HMIT ITS 2025",
     org: "Himpunan Mahasiswa Teknologi Informasi ITS",
     location: "Surabaya, Indonesia",
@@ -150,13 +139,24 @@ export const experience: Experience[] = [
     role: "Database System Assistant Lecturer",
     org: "Institut Teknologi Sepuluh Nopember",
     location: "Surabaya, Indonesia",
-    period: "Feb 2025 - Jun 2025",
+    period: "Jan 2025 - Jun 2025",
     type: "work",
     points: [
       "Facilitated communication between the lecturer and students by clarifying course materials and guiding data-related tasks, including basic and advanced SQL concepts, earning 90% positive feedback.",
       "Assisted students with SQL queries and introductory database workflows during labs and group assignments, including MongoDB, helping 95% of the class score above the passing grade.",
     ],
     techStack: ["MySQL", "MongoDB"],
+  },
+  {
+    role: "Assistant Lecturer of Law and Ethics of Information Technology",
+    org: "Institut Teknologi Sepuluh Nopember",
+    location: "Surabaya, Indonesia",
+    period: "Sep 2024 - Dec 2024",
+    type: "work",
+    points: [
+      "Provided structured feedback on student performance and handled grade-related inquiries while maintaining grade records in Excel, clarifying 90% of miscommunication between students.",
+      "Filled in for 100% of lectures when the lecturer was unavailable to maintain class continuity.",
+    ],
   },
 ];
 
@@ -207,7 +207,7 @@ export const projects: Project[] = [
     description:
       "A comprehensive film recommendation system built as a Big Data final project to address large-scale catalog processing, real-time activity ingestion, personalization, and film discovery. A Kafka producer streams records from the film dataset into the pipeline, MinIO stores the streamed and batch data as S3-compatible object storage, and Apache Spark handles both real-time processing and batch machine-learning workflows, with model training scheduled every five minutes. The Dockerized architecture brings these services together with a Streamlit dashboard for monitoring ingestion and processing, browsing film posters and details, searching the catalog, and viewing model-generated recommendations.",
     tags: ["Apache PySpark", "MinIO", "Streamlit", "Apache Kafka", "Docker", "Python"],
-    image: "/photos/big-data.png",
+    image: "/photos/big-data.webp",
     link: "https://github.com/naufalhakims/bigdata-final-project",
     category: "data",
   },
@@ -279,7 +279,7 @@ export const projects: Project[] = [
     description:
       "A full-stack donation platform designed to support the complete campaign lifecycle for both contributors and administrators. Users can register, authenticate, browse campaigns, and contribute, while administrators can manage campaign content and operational data through protected flows. Built with Vue and TypeScript on the application side and MongoDB for persistence, the project also explores payment-gateway integration so a donation can move from discovery to checkout in one product experience.",
     tags: ["Vue.js", "TypeScript", "MongoDB", "Git"],
-    image: "/photos/fp-pemweb.png",
+    image: "/photos/fp-pemweb.webp",
     link: "https://github.com/naufalhakims/pweb-fp-P05-2024",
     category: "web",
   },
@@ -288,7 +288,7 @@ export const projects: Project[] = [
     description:
       "A visual communication system created for HMIT Tuas Prakarsa across posters, banners, and social-media posts. The work translates event and organizational information into a consistent set of layouts that can remain legible and recognizable across different formats, while keeping the campaign presence coherent on Instagram. Figma was used to develop and adapt the assets for publication through the HMIT ITS media channel.",
     tags: ["Figma", "Canva", "Adobe"],
-    image: "/photos/hmit-tuas.png",
+    image: "/photos/hmit-tuas.webp",
     link: "https://www.instagram.com/hmit_its/",
     category: "design",
   },
@@ -297,7 +297,7 @@ export const projects: Project[] = [
     description:
       "A campaign design and documentation set for A Renewal Agent 6.0, covering promotional posters, banners, and social-media content. The project turns the event’s identity and communication needs into reusable visual assets, balancing hierarchy, consistency, and platform-specific sizing so the material works across both physical and digital touchpoints. The final designs were prepared in Figma and published through the event’s Instagram presence.",
     tags: ["Figma", "Canva", "Adobe"],
-    image: "/photos/arawr.svg",
+    image: "/photos/arawr.webp",
     link: "https://www.instagram.com/ara_its/",
     category: "design",
   },
