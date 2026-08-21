@@ -207,7 +207,7 @@ export const projects: Project[] = [
     description:
       "A comprehensive film recommendation system built as a Big Data final project to address large-scale catalog processing, real-time activity ingestion, personalization, and film discovery. A Kafka producer streams records from the film dataset into the pipeline, MinIO stores the streamed and batch data as S3-compatible object storage, and Apache Spark handles both real-time processing and batch machine-learning workflows, with model training scheduled every five minutes. The Dockerized architecture brings these services together with a Streamlit dashboard for monitoring ingestion and processing, browsing film posters and details, searching the catalog, and viewing model-generated recommendations.",
     tags: ["Apache PySpark", "MinIO", "Streamlit", "Apache Kafka", "Docker", "Python"],
-    image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1600&q=80",
+    image: "/photos/big-data.png",
     link: "https://github.com/naufalhakims/bigdata-final-project",
     category: "data",
   },
@@ -279,7 +279,7 @@ export const projects: Project[] = [
     description:
       "A full-stack donation platform designed to support the complete campaign lifecycle for both contributors and administrators. Users can register, authenticate, browse campaigns, and contribute, while administrators can manage campaign content and operational data through protected flows. Built with Vue and TypeScript on the application side and MongoDB for persistence, the project also explores payment-gateway integration so a donation can move from discovery to checkout in one product experience.",
     tags: ["Vue.js", "TypeScript", "MongoDB", "Git"],
-    image: "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1600&q=80",
+    image: "/photos/fp-pemweb.png",
     link: "https://github.com/naufalhakims/pweb-fp-P05-2024",
     category: "web",
   },
