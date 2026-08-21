@@ -17,8 +17,6 @@ const item = {
 };
 
 export default function Hero() {
-  const lastName = profile.name.replace(`${profile.firstName} `, "");
-
   return (
     <section id="home" data-theme="dark" className="relative min-h-screen overflow-hidden bg-black">
       <Image
