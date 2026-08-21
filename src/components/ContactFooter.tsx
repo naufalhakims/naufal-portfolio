@@ -42,7 +42,7 @@ const socials = [
     href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(footerContact.email)}`,
   },
   { name: "github" as const, label: "GitHub", handle: "/naufalhakims", href: footerContact.github },
-  { name: "linkedin" as const, label: "LinkedIn", handle: "/naufal-syafi-hakim", href: "https://www.linkedin.com/in/naufal-syafi-hakim" },
+  { name: "linkedin" as const, label: "LinkedIn", handle: "/naufal-syafi-hakim", href: footerContact.linkedin },
   { name: "instagram" as const, label: "Instagram", handle: "@nplhkm._", href: footerContact.instagram },
 ];
 

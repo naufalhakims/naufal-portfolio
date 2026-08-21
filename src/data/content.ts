@@ -4,17 +4,12 @@ export const profile = {
   name: "Naufal Syafi' Hakim",
   firstName: "Naufal",
   role: "an IT student",
-  location: "Surabaya, Indonesia",
   email: "naufalsyafi4@gmail.com",
-  phone: "+6288806898411",
-  linkedin: "https://www.linkedin.com/in/naufal-syafi-hakim",
   summary:
     "Final-year Information Technology student at Institut Teknologi Sepuluh Nopember. I enjoy turning messy data and operational problems into practical software, with hands-on experience across full-stack development, data engineering, analytics, applied AI, teaching, and student organizations. Currently seeking opportunities to contribute to impactful software projects and data-driven solutions.",
 };
 
 export const cvUrl = "/resume.pdf";
-
-export const heroPhoto = "/photos/naufal-selfie.jpeg";
 
 export const nav = [
   { label: "About", href: "#about" },
@@ -329,17 +324,10 @@ export const education = {
   location: "Surabaya, Indonesia",
 };
 
-export const aboutMePhoto = {
-  src: "/photos/about.svg", // TODO: replace with your real grayscale portrait
-  caption: "Naufal - IT Student & Data Scientist Intern, Surabaya",
-};
-
 export const footerContact = {
   wordmark: "let's connect!",
   email: "naufalsyafi4@gmail.com",
-  linkedin: "linkedin.com/in/naufal-syafi-hakim",
+  linkedin: "https://www.linkedin.com/in/naufal-syafi-hakim",
   instagram: "https://www.instagram.com/nplhkm._/",
   github: "https://github.com/naufalhakims",
-  location: "Surabaya, Indonesia",
-  copyright: "(c) 2026 Naufal Syafi' Hakim. All rights reserved.",
 };
