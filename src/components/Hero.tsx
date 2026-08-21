@@ -72,7 +72,7 @@ export default function Hero() {
 
       </div>
 
-      <div className="lg:absolute lg:inset-x-0 lg:bottom-0">
+      <div className="hidden lg:block lg:absolute lg:inset-x-0 lg:bottom-0">
         <Marquee />
       </div>
     </section>

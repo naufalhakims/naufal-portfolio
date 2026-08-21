@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
-import { nav, profile } from "@/src/data/content";
+import { nav } from "@/src/data/content";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -66,7 +66,7 @@ export default function Navbar() {
       }`}
     >
       <nav
-        className="mx-auto flex h-[78px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12"
+        className="relative z-50 mx-auto flex h-[78px] max-w-[1440px] items-center justify-between px-5 sm:px-8 lg:px-12"
         aria-label="Primary"
       >
         <a
@@ -99,7 +99,7 @@ export default function Navbar() {
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
           >
-            {open ? <X size={24} /> : <Menu size={24} />}
+            {open ? <X size={24} className="text-white" /> : <Menu size={24} />}
         </button>
       </nav>
 
@@ -130,20 +130,6 @@ export default function Navbar() {
                 </motion.li>
               ))}
             </ul>
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.35 }}
-              className="mt-10"
-            >
-              <a
-                href={`mailto:${profile.email}`}
-                onClick={() => setOpen(false)}
-                className="inline-block rounded-full bg-acid px-6 py-3 text-xs font-bold uppercase tracking-[0.15em] text-black"
-              >
-                Let&apos;s Connect
-              </a>
-            </motion.div>
           </motion.div>
         )}
       </AnimatePresence>
