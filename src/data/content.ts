@@ -3,17 +3,13 @@
 export const profile = {
   name: "Naufal Syafi' Hakim",
   firstName: "Naufal",
-  role: "Information Technology Student - Data Scientist Intern",
+  role: "an IT student",
   location: "Surabaya, Indonesia",
   email: "naufalsyafi4@gmail.com",
   phone: "+6288806898411",
   linkedin: "https://www.linkedin.com/in/naufal-syafi-hakim",
   summary:
-    "Final-year Information Technology student at Institut Teknologi Sepuluh Nopember with internship experience, organizational involvement, and experience as a teaching assistant. Has a solid foundation in programming and system thinking, with exposure to applied AI concepts. Adapts quickly to new tools and technologies, works effectively in team-based environments, and is motivated to further develop hands-on experience across software development and data-driven roles 💖",
-  bio: [
-    "Third-year Information Technology student at Institut Teknologi Sepuluh Nopember (ITS) with a solid foundation in programming, data analysis, and system thinking, plus hands-on exposure to applied AI concepts.",
-    "I adapt quickly to new tools and technologies, work effectively in team-based environments, and I'm motivated to gain hands-on experience across software development and data-driven roles.",
-  ],
+    "Final-year Information Technology student at Institut Teknologi Sepuluh Nopember. I enjoy turning messy data and operational problems into practical software, with hands-on experience across full-stack development, data engineering, analytics, applied AI, teaching, and student organizations. Currently seeking opportunities to contribute to impactful software projects and data-driven solutions.",
 };
 
 export const cvUrl = "/resume.pdf";
@@ -172,6 +168,7 @@ export interface Project {
   description: string;
   tags: string[];
   image: string;
+  gallery?: string[];
   link: string;
   sourceCode?: string;
   sourcePrivate?: boolean;
@@ -182,11 +179,17 @@ export interface Project {
 
 export const projects: Project[] = [
   {
-    title: "Telkomsel Internal Salesforce Tracking Web Application",
+    title: "Telkomsel Salesforce Tracking Web & Mobile Application",
     description:
       "An internal real-time tracking platform for monitoring Salesforce positions and field activity through a geospatial dashboard. The system combines layered GPS maps, outlet geofences, GeoJSON boundaries, seven-day route replay, automated stop detection, and achievement tracking so teams can understand both current coverage and historical movement. Its supporting services handle continuous location ingestion, asynchronous geofence processing, and mobile background tracking with an offline-first queue for more resilient field data collection.",
     tags: ["Django", "Python", "PostgreSQL", "Next.js", "TypeScript", "React", "Leaflet.js"],
     image: "/photos/live-track-telkom.png",
+    gallery: [
+      "/photos/live-track-telkom.png",
+      "/photos/livetrack-linimasa-2.png",
+      "/photos/livetrack-outletview.png",
+      "/photos/livetrack-mobile-2.png",
+    ],
     link: "#",
     sourcePrivate: true,
     category: "web",
@@ -208,8 +211,32 @@ export const projects: Project[] = [
       "A comprehensive film recommendation system built as a Big Data final project to address large-scale catalog processing, real-time activity ingestion, personalization, and film discovery. A Kafka producer streams records from the film dataset into the pipeline, MinIO stores the streamed and batch data as S3-compatible object storage, and Apache Spark handles both real-time processing and batch machine-learning workflows, with model training scheduled every five minutes. The Dockerized architecture brings these services together with a Streamlit dashboard for monitoring ingestion and processing, browsing film posters and details, searching the catalog, and viewing model-generated recommendations.",
     tags: ["Apache PySpark", "MinIO", "Streamlit", "Apache Kafka", "Docker", "Python"],
     image: "/photos/big-data.webp",
+    gallery: [
+      "/photos/big-data.webp",
+      "/photos/big-data-architecture.png",
+      "/photos/big-data-kafka.png",
+      "/photos/big-data-modeling.png",
+    ],
     link: "https://github.com/naufalhakims/bigdata-final-project",
     category: "data",
+  },
+  {
+    title: "RAG Model for Question Answering",
+    description:
+      "A compact retrieval-augmented question-answering application that grounds generated responses in a provided context instead of relying only on a model’s general knowledge. The project uses SQLite to organize the local information, retrieves relevant context for a question, and sends that context through the Groq API before presenting the answer in a lightweight HTML interface. It demonstrates the core RAG loop in a small, understandable application rather than hiding the process behind a large framework.",
+    tags: ["Python", "Groq API", "SQLite", "HTML"],
+    image: "/photos/rag-project.png",
+    link: "https://github.com/naufalhakims/rag-short-project",
+    category: "data",
+  },
+  {
+    title: "BisaKita Donation Web App",
+    description:
+      "A full-stack donation platform designed to support the complete campaign lifecycle for both contributors and administrators. Users can register, authenticate, browse campaigns, and contribute, while administrators can manage campaign content and operational data through protected flows. Built with Vue and TypeScript on the application side and MongoDB for persistence, the project also explores payment-gateway integration so a donation can move from discovery to checkout in one product experience.",
+    tags: ["Vue.js", "TypeScript", "MongoDB", "Git"],
+    image: "/photos/fp-pemweb.webp",
+    link: "https://github.com/naufalhakims/pweb-fp-P05-2024",
+    category: "web",
   },
   {
     title: "EDA on Employee Dataset",
@@ -264,24 +291,6 @@ export const projects: Project[] = [
     image: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?auto=format&fit=crop&w=1600&q=80",
     link: "https://www.kaggle.com/code/naufalhakim123/modul6-lastt",
     category: "data",
-  },
-  {
-    title: "RAG Model for Question Answering",
-    description:
-      "A compact retrieval-augmented question-answering application that grounds generated responses in a provided context instead of relying only on a model’s general knowledge. The project uses SQLite to organize the local information, retrieves relevant context for a question, and sends that context through the Groq API before presenting the answer in a lightweight HTML interface. It demonstrates the core RAG loop in a small, understandable application rather than hiding the process behind a large framework.",
-    tags: ["Python", "Groq API", "SQLite", "HTML"],
-    image: "/photos/rag-project.png",
-    link: "https://github.com/naufalhakims/rag-short-project",
-    category: "data",
-  },
-  {
-    title: "BisaKita Donation Web App",
-    description:
-      "A full-stack donation platform designed to support the complete campaign lifecycle for both contributors and administrators. Users can register, authenticate, browse campaigns, and contribute, while administrators can manage campaign content and operational data through protected flows. Built with Vue and TypeScript on the application side and MongoDB for persistence, the project also explores payment-gateway integration so a donation can move from discovery to checkout in one product experience.",
-    tags: ["Vue.js", "TypeScript", "MongoDB", "Git"],
-    image: "/photos/fp-pemweb.webp",
-    link: "https://github.com/naufalhakims/pweb-fp-P05-2024",
-    category: "web",
   },
   {
     title: "HMIT Tuas Prakarsa Media and Information",

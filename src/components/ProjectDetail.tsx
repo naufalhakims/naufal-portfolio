@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { ExternalLink, X } from "lucide-react";
@@ -8,6 +8,8 @@ import type { Project } from "@/src/data/content";
 
 export default function ProjectDetail({ project, onClose }: { project: Project; onClose: () => void }) {
   const sourceUrl = project.sourceCode ?? (project.link !== "#" ? project.link : undefined);
+  const galleryImages = project.gallery?.length ? project.gallery.slice(0, 4) : [project.image];
+  const [activeImageIndex, setActiveImageIndex] = useState(0);
 
   useEffect(() => {
     const onKeyDown = (event: KeyboardEvent) => event.key === "Escape" && onClose();
@@ -98,15 +100,39 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
 
           <div>
             <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">Gallery</p>
-            <div className="relative mt-3 aspect-[16/10] overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
+            <div className="relative mt-3 aspect-[16/9] overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
               <Image
-                src={project.image}
-                alt={`${project.title} gallery image`}
+                src={galleryImages[activeImageIndex]}
+                alt={`${project.title} gallery image ${activeImageIndex + 1}`}
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 40rem"
               />
             </div>
+            {galleryImages.length > 1 && (
+              <div className="mt-3 grid grid-cols-4 gap-2" aria-label={`${project.title} gallery thumbnails`}>
+                {galleryImages.map((image, index) => (
+                  <button
+                    key={`${image}-${index}`}
+                    type="button"
+                    onClick={() => setActiveImageIndex(index)}
+                    aria-label={`Show gallery image ${index + 1}`}
+                    aria-pressed={activeImageIndex === index}
+                    className={`relative aspect-[4/3] overflow-hidden rounded-lg border transition-colors ${
+                      activeImageIndex === index ? "border-black" : "border-neutral-200 hover:border-neutral-500"
+                    }`}
+                  >
+                    <Image
+                      src={image}
+                      alt=""
+                      fill
+                      className="object-cover"
+                      sizes="(max-width: 640px) 25vw, 10rem"
+                    />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </motion.div>

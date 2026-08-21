@@ -44,8 +44,8 @@ export default function Hero() {
 
           <motion.div variants={item} className="mt-2 flex max-w-4xl items-start gap-4 sm:gap-6">
             <MoveRight aria-hidden="true" className="mt-3 h-4 w-20 shrink-0 text-acid sm:mt-3.5 sm:h-5 sm:w-28 lg:mt-4 lg:h-8 lg:w-10" strokeWidth={1.5} />
-            <p className="font-display text-[clamp(1.5rem,3.4vw,3.1rem)] font-bold leading-[1.04] tracking-[0em] text-white">
-              <span className="block">a software engineer</span>
+            <p className="max-w-[30ch] font-display text-[clamp(1.5rem,3.4vw,3.1rem)] font-bold leading-[1.04] tracking-[0em] text-white">
+              <span className="block">{profile.role}</span>
             </p>
           </motion.div>
 
