@@ -35,7 +35,12 @@ function BrandIcon({ name, className }: { name: "instagram" | "github" | "linked
 }
 
 const socials = [
-  { name: "mail" as const, label: "Email", handle: footerContact.email, href: `mailto:${footerContact.email}` },
+  {
+    name: "mail" as const,
+    label: "Email",
+    handle: footerContact.email,
+    href: `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(footerContact.email)}`,
+  },
   { name: "github" as const, label: "GitHub", handle: "/naufalhakims", href: footerContact.github },
   { name: "linkedin" as const, label: "LinkedIn", handle: "/naufal-syafi-hakim", href: "https://www.linkedin.com/in/naufal-syafi-hakim" },
   { name: "instagram" as const, label: "Instagram", handle: "@nplhkm._", href: footerContact.instagram },
