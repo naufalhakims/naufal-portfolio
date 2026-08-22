@@ -85,6 +85,9 @@ export default function ContactFooter() {
               <h2 className="font-display font-bold text-[clamp(3rem,13vw,10rem)] uppercase leading-[0.85] tracking-tight">
                 {footerContact.wordmark}
               </h2>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-white/70">
+                Have a project, question, or opportunity in mind? Let&apos;s start a conversation.
+              </p>
               <p className="mt-4 flex items-center gap-2 text-sm text-white/60">
                 made with{" "}
                 <Heart className="size-4 fill-acid text-acid" /> by{" "}

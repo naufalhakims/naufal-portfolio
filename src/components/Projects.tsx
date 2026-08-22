@@ -20,13 +20,18 @@ export default function Projects() {
   const shown = isTruncated && !expanded ? visible.slice(0, MAX_CARDS) : visible;
 
   return (
-    <section id="projects" data-theme="light" className="bg-white py-16 lg:py-20">
+    <section id="projects" data-theme="light" className="bg-white py-16 transition-colors duration-300 dark:bg-zinc-950 lg:py-20">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <Reveal>
           <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
-            <h2 className="font-display font-bold text-[clamp(2rem,5vw,3.75rem)] uppercase leading-[0.92] tracking-tight text-black">
-              Projects
-            </h2>
+            <div>
+              <h2 className="font-display font-bold text-[clamp(2rem,5vw,3.75rem)] uppercase leading-[0.92] tracking-tight text-black dark:text-white">
+                Projects
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+                Here are some of the projects I&apos;ve worked on. More will be added soon!
+              </p>
+            </div>
             <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter projects by type">
               {projectFilters.map((f) => (
                 <button
@@ -39,8 +44,8 @@ export default function Projects() {
                   aria-pressed={filter === f.key}
                   className={`rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] transition-colors ${
                     filter === f.key
-                      ? "border-black bg-black text-white"
-                      : "border-neutral-300 text-neutral-600 hover:border-black"
+                      ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                      : "border-neutral-300 text-neutral-600 hover:border-black dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-white"
                   }`}
                 >
                   {f.label}
@@ -60,10 +65,9 @@ export default function Projects() {
             <button
               type="button"
               onClick={() => setExpanded(true)}
-              data-cursor-view
-              className="group flex min-h-[190px] flex-col items-start justify-between rounded-2xl border border-dashed border-neutral-300 p-4 text-left text-black transition-colors hover:border-black"
+              className="group flex min-h-[190px] flex-col items-start justify-between rounded-2xl border border-dashed border-neutral-300 p-4 text-left text-black transition-colors hover:border-black dark:border-neutral-700 dark:text-white dark:hover:border-white"
             >
-              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+              <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
                 {visible.length - MAX_CARDS} more
               </span>
               <span className="flex items-center gap-2 font-display font-bold text-xl uppercase tracking-tight">

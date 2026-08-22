@@ -34,15 +34,15 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
         role="dialog"
         aria-modal="true"
         aria-labelledby="project-dialog-title"
-        className="my-auto w-full max-w-4xl overflow-hidden rounded-2xl bg-white text-black shadow-2xl"
+        className="my-auto w-full max-w-4xl overflow-hidden rounded-2xl bg-white text-black shadow-2xl dark:bg-zinc-900 dark:text-white"
         initial={{ opacity: 0, y: 24, scale: 0.97 }}
         animate={{ opacity: 1, y: 0, scale: 1 }}
         exit={{ opacity: 0, y: 16, scale: 0.98 }}
         transition={{ duration: 0.25, ease: "easeOut" }}
       >
-        <div className="flex items-start justify-between gap-6 border-b border-neutral-200 p-6 sm:p-8">
+        <div className="flex items-start justify-between gap-6 border-b border-neutral-200 p-6 dark:border-neutral-800 sm:p-8">
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
               {project.category}
             </p>
             <h2 id="project-dialog-title" className="mt-2 font-display font-bold text-3xl uppercase leading-none sm:text-5xl">
@@ -52,7 +52,7 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
           <button
             type="button"
             onClick={onClose}
-            className="shrink-0 rounded-full border border-neutral-200 p-2 transition-colors hover:border-black"
+            className="shrink-0 rounded-full border border-neutral-200 p-2 transition-colors hover:border-black dark:border-neutral-700 dark:hover:border-white"
             aria-label="Close project details"
           >
             <X className="size-5" />
@@ -61,12 +61,12 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
 
         <div className="grid gap-8 p-6 sm:p-8 lg:grid-cols-[1fr_1.2fr]">
           <div>
-            <p className="text-sm leading-relaxed text-neutral-600">{project.description}</p>
+            <p className="text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">{project.description}</p>
             <div className="mt-7">
-              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">Tech stack</p>
+              <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">Tech stack</p>
               <div className="mt-3 flex flex-wrap gap-1.5">
                 {project.tags.map((tag, index) => (
-                  <span key={`${tag}-${index}`} className="rounded-full bg-acid px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em]">
+                  <span key={`${tag}-${index}`} className="rounded-full bg-acid px-2 py-0.5 text-[10px] font-bold uppercase tracking-[0.08em] text-black">
                     {tag}
                   </span>
                 ))}
@@ -75,7 +75,7 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
 
             <div className="mt-8 flex flex-wrap gap-3">
               {project.sourcePrivate ? (
-                <span className="inline-flex items-center rounded-full border border-neutral-200 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-neutral-500">
+                <span className="inline-flex items-center rounded-full border border-neutral-200 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
                   Source code private
                 </span>
               ) : sourceUrl ? (
@@ -83,14 +83,14 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
                   Open project link <ExternalLink className="size-3.5" />
                 </a>
               ) : (
-                <span className="text-xs text-neutral-500">Source link not added yet.</span>
+                <span className="text-xs text-neutral-500 dark:text-neutral-400">Source link not added yet.</span>
               )}
               {project.livePreview && (
                 <a
                   href={project.livePreview}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-black px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] transition-colors hover:bg-acid"
+                  className="inline-flex items-center gap-2 rounded-full border border-black px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.12em] transition-colors hover:bg-acid dark:border-white"
                 >
                   Open live preview <ExternalLink className="size-3.5" />
                 </a>
@@ -99,8 +99,8 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
           </div>
 
           <div>
-            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">Gallery</p>
-            <div className="relative mt-3 aspect-[16/9] overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100">
+            <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">Gallery</p>
+            <div className="relative mt-3 aspect-[16/9] overflow-hidden rounded-xl border border-neutral-200 bg-neutral-100 dark:border-neutral-800 dark:bg-zinc-800">
               <Image
                 src={galleryImages[activeImageIndex]}
                 alt={`${project.title} gallery image ${activeImageIndex + 1}`}
@@ -119,7 +119,7 @@ export default function ProjectDetail({ project, onClose }: { project: Project; 
                     aria-label={`Show gallery image ${index + 1}`}
                     aria-pressed={activeImageIndex === index}
                     className={`relative aspect-[4/3] overflow-hidden rounded-lg border transition-colors ${
-                      activeImageIndex === index ? "border-black" : "border-neutral-200 hover:border-neutral-500"
+                      activeImageIndex === index ? "border-black dark:border-white" : "border-neutral-200 hover:border-neutral-500 dark:border-neutral-700 dark:hover:border-neutral-400"
                     }`}
                   >
                     <Image

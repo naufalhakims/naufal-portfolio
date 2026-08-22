@@ -2,13 +2,30 @@
 
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, Moon, Sun, X } from "lucide-react";
 import { nav } from "@/src/data/content";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<string | null>("home");
   const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [darkMode, setDarkMode] = useState(false);
+
+  useEffect(() => {
+    const savedTheme = window.localStorage.getItem("portfolio-theme");
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const nextDarkMode = savedTheme ? savedTheme === "dark" : prefersDark;
+
+    setDarkMode(nextDarkMode);
+    document.documentElement.classList.toggle("dark", nextDarkMode);
+  }, []);
+
+  const toggleDarkMode = () => {
+    const nextDarkMode = !darkMode;
+    setDarkMode(nextDarkMode);
+    document.documentElement.classList.toggle("dark", nextDarkMode);
+    window.localStorage.setItem("portfolio-theme", nextDarkMode ? "dark" : "light");
+  };
 
   useEffect(() => {
     const sections = Array.from(document.querySelectorAll<HTMLElement>("section[data-theme], footer[data-theme]"));
@@ -24,30 +41,39 @@ export default function Navbar() {
       }
     };
 
+    const updateActiveSection = () => {
+      const marker = Math.min(window.innerHeight * 0.35, 280);
+      let nextActive = "home";
+
+      nav.forEach((item) => {
+        const section = document.querySelector<HTMLElement>(item.href);
+        if (section && section.getBoundingClientRect().top <= marker) {
+          nextActive = item.href.slice(1);
+        }
+      });
+
+      setActive((current) => (current === nextActive ? current : nextActive));
+    };
+
     const sectionObserver = new IntersectionObserver(
       () => updateThemeFromViewport(),
       { rootMargin: "-76px 0px -70% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] },
     );
 
-    const activeObserver = new IntersectionObserver(
-      (entries) => entries.forEach((entry) => entry.isIntersecting && setActive(entry.target.id)),
-      { rootMargin: "-35% 0px -55%", threshold: 0 },
-    );
-
     sections.forEach((section) => sectionObserver.observe(section));
     updateThemeFromViewport();
+    updateActiveSection();
     window.addEventListener("scroll", updateThemeFromViewport, { passive: true });
+    window.addEventListener("scroll", updateActiveSection, { passive: true });
     window.addEventListener("resize", updateThemeFromViewport, { passive: true });
-    nav.forEach((item) => {
-      const section = document.querySelector(item.href);
-      if (section) activeObserver.observe(section);
-    });
+    window.addEventListener("resize", updateActiveSection, { passive: true });
 
     return () => {
       sectionObserver.disconnect();
-      activeObserver.disconnect();
       window.removeEventListener("scroll", updateThemeFromViewport);
+      window.removeEventListener("scroll", updateActiveSection);
       window.removeEventListener("resize", updateThemeFromViewport);
+      window.removeEventListener("resize", updateActiveSection);
     };
   }, []);
 
@@ -62,7 +88,7 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-250 ${
-        theme === "dark" ? "text-white" : "text-black"
+        darkMode || theme === "dark" ? "text-white" : "text-black"
       }`}
     >
       <nav
@@ -133,6 +159,17 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+
+      <button
+        type="button"
+        onClick={toggleDarkMode}
+        className="fixed bottom-5 right-5 z-[70] flex size-11 items-center justify-center rounded-full border border-black/10 bg-white/90 text-black shadow-lg backdrop-blur transition-colors hover:bg-acid hover:text-black dark:border-white/10 dark:bg-zinc-900/90 dark:text-white sm:bottom-7 sm:right-7"
+        aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+        aria-pressed={darkMode}
+        title={darkMode ? "Switch to light mode" : "Switch to dark mode"}
+      >
+        {darkMode ? <Sun size={19} aria-hidden="true" /> : <Moon size={19} aria-hidden="true" />}
+      </button>
     </header>
   );
 }

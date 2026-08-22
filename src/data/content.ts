@@ -178,7 +178,7 @@ export const projects: Project[] = [
     description:
       "An internal real-time tracking platform for monitoring Salesforce positions and field activity through a geospatial dashboard. The system combines layered GPS maps, outlet geofences, GeoJSON boundaries, seven-day route replay, automated stop detection, and achievement tracking so teams can understand both current coverage and historical movement. Its supporting services handle continuous location ingestion, asynchronous geofence processing, and mobile background tracking with an offline-first queue for more resilient field data collection.",
     tags: ["Django", "Python", "PostgreSQL", "Next.js", "TypeScript", "React", "Leaflet.js"],
-    image: "/photos/live-track-telkom.png",
+    image: "/photos/telkomsel-logo.png",
     gallery: [
       "/photos/live-track-telkom.png",
       "/photos/livetrack-linimasa-2.png",
@@ -193,9 +193,12 @@ export const projects: Project[] = [
   {
     title: "Telkomsel Postpaid Channel Performance",
     description:
-    "The Postpaid Channel Performance & Sales Intelligence Platform is an enterprise web application designed to consolidate, normalize, and visualize large-scale commercial performance data across nationwide multi-tier distribution channels, including national retail chains, direct sales agencies, digital platforms, and walk-in service centers. Developed using Laravel 12 and a modern web stack, the system automates monthly reporting workflows through custom data-extraction bots for proprietary internal portals, an automated CAPTCHA-solving integration, an ETL pipeline reconciling 50,000+ monthly transaction records, fuzzy-matching algorithms for retailer alias normalization, and cross-platform JWT Single Sign-On (SSO). It delivers interactive analytics enabling executive and regional management to track revenue growth, target achievement rates, activation SLA turnaround times, and retail store productivity across granular geographic hierarchies.",
+      "Enterprise web application for consolidating and visualizing nationwide postpaid channel performance across retail, sales agencies, digital platforms, and service centers. Built with Laravel 12, it automates monthly reporting through data-extraction bots, CAPTCHA-solving integration, an ETL pipeline processing 50,000+ transactions monthly, fuzzy retailer alias matching, and JWT-based SSO. Provides interactive analytics for revenue growth, target achievement, activation SLA, and retail productivity across geographic hierarchies.",
     tags: ["php", "Laravel", "Rest API", "JavaScript"],
-    image: "/photos/postpaid-dashboard.png",
+    image: "/photos/telkomsel-logo.png",
+    gallery: [
+      "/photos/postpaid-dashboard.png",
+    ],
     link: "#",
     sourcePrivate: true,
     category: "web",

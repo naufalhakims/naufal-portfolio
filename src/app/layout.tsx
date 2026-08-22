@@ -23,14 +23,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="antialiased">
+    <html lang="en" className="antialiased" suppressHydrationWarning>
       <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(() => { try { const saved = localStorage.getItem("portfolio-theme"); const dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches; document.documentElement.classList.toggle("dark", dark); } catch {} })();`,
+          }}
+        />
         <link
           href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,700,701,501&display=swap"
           rel="stylesheet"
         />
       </head>
-      <body className="min-h-screen bg-white font-sans text-neutral-900">
+      <body className="min-h-screen bg-white font-sans text-neutral-900 transition-colors duration-300 dark:bg-black dark:text-white">
         {children}
       </body>
     </html>

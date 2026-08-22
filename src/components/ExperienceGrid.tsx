@@ -17,7 +17,7 @@ function Highlight({ text }: { text: string }) {
     <span>
       {parts.map((part, i) =>
         i % 2 === 1 ? (
-          <strong key={i} className="font-bold text-black">
+          <strong key={i} className="font-bold">
             {part}
           </strong>
         ) : (
@@ -34,13 +34,18 @@ export default function ExperienceGrid() {
   const visible = experience.filter((e) => filter === "all" || e.type === filter);
 
   return (
-    <section id="experience" data-theme="light" className="bg-neutral-50 py-16 lg:py-20">
+    <section id="experience" data-theme="light" className="bg-neutral-50 py-16 transition-colors duration-300 dark:bg-zinc-950 lg:py-20">
       <div className="mx-auto max-w-5xl px-5 sm:px-8">
         <Reveal>
           <div className="mb-8 flex flex-wrap items-end justify-between gap-5">
-            <h2 className="font-display font-bold text-[clamp(2rem,5vw,3.75rem)] uppercase leading-[0.92] tracking-tight text-black">
-              Experience
-            </h2>
+            <div>
+              <h2 className="font-display font-bold text-[clamp(2rem,5vw,3.75rem)] uppercase leading-[0.92] tracking-tight text-black dark:text-white">
+                Experience
+              </h2>
+              <p className="mt-3 max-w-xl text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
+                Here are some of the roles where I already worked and contributed so far
+              </p>
+            </div>
             <div className="flex flex-wrap gap-2.5" role="group" aria-label="Filter experience by type">
               {experienceFilters.map((f) => (
                 <button
@@ -50,8 +55,8 @@ export default function ExperienceGrid() {
                   aria-pressed={filter === f.key}
                   className={`rounded-full border px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.15em] transition-colors ${
                     filter === f.key
-                      ? "border-black bg-black text-white"
-                      : "border-neutral-300 text-neutral-600 hover:border-black"
+                      ? "border-black bg-black text-white dark:border-white dark:bg-white dark:text-black"
+                      : "border-neutral-300 text-neutral-600 hover:border-black dark:border-neutral-700 dark:text-neutral-300 dark:hover:border-white"
                   }`}
                 >
                   {f.label}
@@ -77,9 +82,8 @@ export default function ExperienceGrid() {
                   className={
                     isFeatured
                       ? "group flex min-h-[220px] flex-col justify-between rounded-2xl bg-acid p-6 text-black transition-transform hover:-translate-y-1 lg:min-h-[240px]"
-                      : "group flex min-h-[220px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6 text-black transition-transform hover:-translate-y-1 hover:border-black lg:min-h-[240px]"
+                      : "group flex min-h-[220px] flex-col justify-between rounded-2xl border border-neutral-200 bg-white p-6 text-black transition-transform hover:-translate-y-1 hover:border-black dark:border-neutral-800 dark:bg-zinc-900 dark:text-white dark:hover:border-white lg:min-h-[240px]"
                   }
-                  data-cursor-view
                 >
                 {isFeatured ? (
                   <>
@@ -114,14 +118,14 @@ export default function ExperienceGrid() {
                 ) : (
                   <>
                     <div>
-                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500">
+                      <p className="text-[11px] font-bold uppercase tracking-[0.2em] text-neutral-500 dark:text-neutral-400">
                         {exp.period}
                       </p>
                       <h3 className="mt-2 text-lg font-bold leading-snug">{exp.role}</h3>
-                      <p className="mt-1 text-sm font-semibold text-neutral-500">{exp.org}</p>
+                      <p className="mt-1 text-sm font-semibold text-neutral-500 dark:text-neutral-400">{exp.org}</p>
                       <ul className="mt-3 space-y-1.5">
                         {exp.points.map((point) => (
-                          <li key={point} className="flex gap-2 text-xs leading-relaxed text-neutral-600">
+                          <li key={point} className="flex gap-2 text-sm leading-relaxed text-neutral-600 dark:text-neutral-300">
                             <span className="mt-2 size-1.5 shrink-0 rounded-full bg-acid" />
                             <Highlight text={point} />
                           </li>
@@ -130,14 +134,14 @@ export default function ExperienceGrid() {
                       {exp.techStack && (
                         <div className="mt-4 flex flex-wrap gap-2">
                           {exp.techStack.map((tech) => (
-                            <span key={tech} className="rounded-full border border-neutral-200 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-neutral-500">
+                            <span key={tech} className="rounded-full border border-neutral-200 px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.1em] text-neutral-500 dark:border-neutral-700 dark:text-neutral-400">
                               {tech}
                             </span>
                           ))}
                         </div>
                       )}
                     </div>
-                    <div className="mt-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-500">
+                    <div className="mt-4 flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-neutral-500 dark:text-neutral-400">
                       <ArrowUpRight className="size-4" />
                       {exp.location}
                     </div>
