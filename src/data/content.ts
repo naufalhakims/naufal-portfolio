@@ -67,9 +67,8 @@ export const experience: Experience[] = [
     role: "Fullstack Developer Intern",
     org: "PT Telekomunikasi Selular (Telkomsel)",
     location: "Surabaya, Indonesia",
-    period: "Jul 2026 - Present",
+    period: "Jul 2026 - Aug 2026",
     type: "work",
-    featured: true,
     points: [
       "Built a real-time Live Tracker Dashboard Web Application with multi-layer GPS map rendering for salesforce positions, outlet geofences, GeoJSON 15+ cluster boundaries, one-week historical route replay, automated stop detection, and achievements tracking to reduce manual audit effort and enable faster performance visualization.",
       "Architected a high-throughput Django location ingestion API handling continuous GPS coordinates from 400+ devices with idempotent event processing, deduplication, and real-time geofence triggering.",
@@ -188,7 +187,6 @@ export const projects: Project[] = [
     link: "#",
     sourcePrivate: true,
     category: "web",
-    featured: true,
   },
   {
     title: "Telkomsel Postpaid Channel Performance",

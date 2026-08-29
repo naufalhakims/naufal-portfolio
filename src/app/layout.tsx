@@ -27,7 +27,7 @@ export default function RootLayout({
       <head>
         <script
           dangerouslySetInnerHTML={{
-            __html: `(() => { try { const saved = localStorage.getItem("portfolio-theme"); const dark = saved ? saved === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches; document.documentElement.classList.toggle("dark", dark); } catch {} })();`,
+            __html: `(() => { try { const saved = localStorage.getItem("portfolio-theme"); const dark = saved === "dark"; document.documentElement.classList.toggle("dark", dark); } catch {} })();`,
           }}
         />
         <link

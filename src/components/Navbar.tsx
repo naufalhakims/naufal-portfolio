@@ -13,8 +13,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const savedTheme = window.localStorage.getItem("portfolio-theme");
-    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const nextDarkMode = savedTheme ? savedTheme === "dark" : prefersDark;
+    const nextDarkMode = savedTheme === "dark";
 
     setDarkMode(nextDarkMode);
     document.documentElement.classList.toggle("dark", nextDarkMode);
