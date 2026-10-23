@@ -1,15 +1,15 @@
-// All site content lives here. Edit text in one place without touching JSX.
+﻿// All site content lives here. Edit text in one place without touching JSX.
 
 export const profile = {
   name: "Naufal Syafi' Hakim",
   firstName: "Naufal",
-  role: "an IT student",
+  role: "a developer",
   email: "naufalsyafi4@gmail.com",
   summary:
     "Final-year Information Technology student at Institut Teknologi Sepuluh Nopember. I enjoy turning messy data and operational problems into practical software, with hands-on experience across full-stack development, data engineering, analytics, applied AI, teaching, and student organizations. Currently seeking opportunities to contribute to impactful software projects and data-driven solutions.",
 };
 
-export const cvUrl = "/resume.pdf";
+export const cvUrl = "/naufal-CV.pdf";
 
 export const nav = [
   { label: "About", href: "#about" },
@@ -70,11 +70,12 @@ export const experience: Experience[] = [
     period: "Jul 2026 - Aug 2026",
     type: "work",
     points: [
-      "Built a real-time Live Tracker Dashboard Web Application with multi-layer GPS map rendering for salesforce positions, outlet geofences, GeoJSON 15+ cluster boundaries, one-week historical route replay, automated stop detection, and achievements tracking to reduce manual audit effort and enable faster performance visualization.",
-      "Architected a high-throughput Django location ingestion API handling continuous GPS coordinates from 400+ devices with idempotent event processing, deduplication, and real-time geofence triggering.",
-      "Designed and implemented an asynchronous geofencing worker using PostgreSQL as a durable job queue, achieving production p95 latency under 200ms and queue lag under 2 seconds.",
-      "Engineered a React Native (Expo) Android app with persistent background GPS tracking, native Kotlin modules for mock-GPS detection and OS kill-resistance, and an offline-first location queue with 0% data loss during network outages.",
-      "Built an end-to-end sales analytics platform for Telkomsel, featuring a custom ETL pipeline that parsed and reconciled 50,000+ monthly multi-source transaction records across national distribution channels.",
+      "Developed a Dynamic Budget Reallocation Dashboard in Django and Next.js to manage and balance marketing fee disbursements across 15+ operational clusters and 15+ budget categories with 100% balance integrity.",
+      "Engineered an automated financial PDF report generator from scratch using ReportLab, producing multi-page official audit reports with cluster-specific dynamic digital signatures.",
+      "Implemented a multi-tier batch approval and audit trail workflow with regex-based rejection tracking and instant WhatsApp notifications under 3s delivery.",
+      "Built enterprise web with PHP and Laravel 12 to automate nationwide postpaid channel reporting through data extraction, ETL processing of 50,000+ monthly transactions, retailer alias matching, JWT-based SSO, and interactive performance analytics.",
+      "Designed an asynchronous GPS telemetry ingestion pipeline handling 100k+ daily coordinates data from 400+ users maintaining p95 latency under 200 ms and custom spatial index evaluating geofences against 24,000+ retail outlets in O(1) time complexity.",
+      "Authored zero-downtime VPS deployment runbooks orchestrating 6 systemd services, utilizing Nginx Gzip compression to reduce API payload sizes by ~85%.",
     ],
     techStack: ["Next.js 14", "TypeScript", "React Native", "Django 5", "PostgreSQL", "Leaflet.js", "Kotlin", "Virtual Private Server", "Laravel", "PHP"],
   },
@@ -172,35 +173,7 @@ export interface Project {
 }
 
 export const projects: Project[] = [
-  {
-    title: "Telkomsel Salesforce Tracking Web & Mobile Application",
-    description:
-      "An internal real-time tracking platform for monitoring Salesforce positions and field activity through a geospatial dashboard. The system combines layered GPS maps, outlet geofences, GeoJSON boundaries, seven-day route replay, automated stop detection, and achievement tracking so teams can understand both current coverage and historical movement. Its supporting services handle continuous location ingestion, asynchronous geofence processing, and mobile background tracking with an offline-first queue for more resilient field data collection.",
-    tags: ["Django", "Python", "PostgreSQL", "Next.js", "TypeScript", "React", "Leaflet.js"],
-    image: "/photos/telkomsel-logo.png",
-    gallery: [
-      "/photos/live-track-telkom.png",
-      "/photos/livetrack-linimasa-2.png",
-      "/photos/livetrack-outletview.png",
-      "/photos/livetrack-mobile-2.png",
-    ],
-    link: "#",
-    sourcePrivate: true,
-    category: "web",
-  },
-  {
-    title: "Telkomsel Postpaid Channel Performance",
-    description:
-      "Enterprise web application for consolidating and visualizing nationwide postpaid channel performance across retail, sales agencies, digital platforms, and service centers. Built with Laravel 12, it automates monthly reporting through data-extraction bots, CAPTCHA-solving integration, an ETL pipeline processing 50,000+ transactions monthly, fuzzy retailer alias matching, and JWT-based SSO. Provides interactive analytics for revenue growth, target achievement, activation SLA, and retail productivity across geographic hierarchies.",
-    tags: ["php", "Laravel", "Rest API", "JavaScript"],
-    image: "/photos/telkomsel-logo.png",
-    gallery: [
-      "/photos/postpaid-dashboard.png",
-    ],
-    link: "#",
-    sourcePrivate: true,
-    category: "web",
-  },
+
   {
     title: "Film Recommendation Similarity System",
     description:
@@ -232,6 +205,15 @@ export const projects: Project[] = [
     tags: ["Vue.js", "TypeScript", "MongoDB", "Git"],
     image: "/photos/fp-pemweb.webp",
     link: "https://github.com/naufalhakims/pweb-fp-P05-2024",
+    category: "web",
+  },
+  {
+    title: "Java QA Automation Framework",
+    description:
+      "Automated UI and API testing framework built with Java, Selenium WebDriver, JUnit 5, REST Assured, and Maven. This project demonstrates functional test automation, reusable test architecture, API validation, and continuous integration using GitHub Actions.",
+    tags: ["Java", "Selenium", "JUnit 5", "REST Assured", "Maven"],
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1600&q=80",
+    link: "https://github.com/naufalhakims/java-qa-automation-framework",
     category: "web",
   },
   {
