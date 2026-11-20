@@ -190,6 +190,18 @@ export const projects: Project[] = [
     category: "data",
   },
   {
+    title: "Caterhub : Catering Marketplace and Kitchen Operations Platform",
+    description:
+      "A full-stack catering marketplace and kitchen-operations platform for SMEs with Next.js, Express, and PostgreSQL, featuring datebased vendor search, quotation negotiation, QRIS payments (Midtrans sandbox), overbooking-safe capacity, recipe-based cost-tracking, and automated WhatsApp notifications",
+    tags: [" Next.js", "React", "TypeScript", "Tailwind CSS", "Express.js", "PostgreSQL", "Prisma", "Midtrans", "Fonnte", "Leaflet", "Railway"],
+    image: "/photos/caterhub.png",
+    gallery: [
+      "/photos/caterhub.png",
+    ],
+    link: "https://web-production-240c4.up.railway.app/",
+    category: "web",
+  },
+  {
     title: "RAG Model for Question Answering",
     description:
       "A compact retrieval-augmented question-answering application that grounds generated responses in a provided context instead of relying only on a model’s general knowledge. The project uses SQLite to organize the local information, retrieves relevant context for a question, and sends that context through the Groq API before presenting the answer in a lightweight HTML interface. It demonstrates the core RAG loop in a small, understandable application rather than hiding the process behind a large framework.",
